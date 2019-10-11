@@ -9,7 +9,7 @@ data class League(
     var description: String = "",
     var stadium: String = "",
     var coach: String = "",
-    var profileCoach: Int,
-    var logo: Int = 0,
-    var background: Int = 0
+    var profileCoach: Int = R.drawable.arsenal_coach,
+    var logo: Int = R.drawable.arsenal_logo,
+    var background: Int = R.drawable.arsenal_background
 ) : Parcelable
