@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="name_club" type="id"/>
-    <item name="club_desc" type="id"/>
-    <item name="stadium_name" type="id"/>
-    <item name="coach_name" type="id"/>
-    <item name="profile_coach" type="id"/>
-    <item name="club_logo" type="id"/>
-    <item name="stadium_base" type="id"/>
+    <item name="name_league" type="id"/>
+    <item name="league_desc" type="id"/>
+    <item name="league_loc" type="id"/>
+    <item name="league_logo" type="id"/>
     <item name="rv_league" type="id"/>
 </resources>
 
