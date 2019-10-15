@@ -1,5 +1,6 @@
-package com.dicoding.picodiploma.sejiwaproject
+package com.dicoding.picodiploma.sejiwaproject.db
 
+import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.model.League
 
 object LeagueData {
@@ -30,14 +31,16 @@ object LeagueData {
         "Spanyol",
         "USA")
 
-    private val leagueLogo = intArrayOf(R.drawable.english,
+    private val leagueLogo = intArrayOf(
+        R.drawable.english,
         R.drawable.france,
         R.drawable.germany,
         R.drawable.italia,
         R.drawable.portugal,
         R.drawable.scotland,
         R.drawable.spanyol,
-        R.drawable.usa)
+        R.drawable.usa
+    )
 
     val listData: ArrayList<League>
     get() {
