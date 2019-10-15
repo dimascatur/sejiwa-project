@@ -12,30 +12,29 @@ class ItemLeagueUI : AnkoComponent<Context> {
         return relativeLayout {
             padding = dip(16)
             imageView {
-                id = R.id.club_logo
-                imageResource = R.drawable.arsenal_logo
+                id = R.id.league_logo
+                imageResource = R.drawable.english
 
             }.lparams(width = dip(120),
                 height = dip(120))
             linearLayout{
                 textView{
-                    val clubName = "Arsenal"
-                    id = R.id.name_club
+                    val leagueName = "English Premier League"
+                    id = R.id.name_league
                     textSize = sp(16).toFloat()
-                    text = clubName
+                    text = leagueName
                 }.lparams(width = matchParent,
                     height = wrapContent)
                 textView{
-                    val clubStadium = "The Emirates Stadium"
-                    id = R.id.stadium_name
+                    val leagueLocation = "England"
+                    id = R.id.league_loc
                     textSize = sp(14).toFloat()
-                    text = clubStadium
+                    text = leagueLocation
                 }.lparams(width = matchParent,
                     height = wrapContent)
                 textView{
-                    val clubDesc = "Arsenal Football Club is a professional football club based in Holloway, London which currently plays in the Premier League, the highest level of English football. One of the most successful clubs in English football, " +
-                            "they have won 13 First Division and Premier League titles and a joint record 11 FA Cups.\n"
-                    id = R.id.club_desc
+                    val clubDesc = "The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL)."
+                    id = R.id.league_desc
                     textSize = sp(14).toFloat()
                     text = clubDesc
                     maxLines = 2
