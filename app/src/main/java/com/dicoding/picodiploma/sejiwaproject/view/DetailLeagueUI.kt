@@ -10,44 +10,49 @@ import org.jetbrains.anko.*
 class DetailLeagueUI : AnkoComponent<Context> {
     override fun createView(ui: AnkoContext<Context>): View = with(ui) {
         return linearLayout {
-            verticalLayout {
-                imageView {
-                    padding = dip(16)
-                    id = R.id.league_logo
-                    imageResource = R.drawable.english
+            scrollView {
+                verticalLayout {
+                    imageView {
+                        padding = dip(16)
+                        id = R.id.league_logo
+                        imageResource = R.drawable.english
+                    }.lparams(
+                        width = matchParent,
+                        height = wrapContent
+                    )
+                    textView {
+                        id = R.id.name_league
+                        textSize = 20f
+                        typeface = Typeface.DEFAULT_BOLD
+                        textColor = Color.BLACK
+                    }.lparams(
+                        width = matchParent,
+                        height = wrapContent
+                    )
+                    textView {
+                        id = R.id.league_loc
+                        textSize = 16f
+                    }.lparams(
+                        width = matchParent,
+                        height = wrapContent
+                    )
+                    textView {
+                        id = R.id.league_desc
+                        textSize = 16f
+                        maxLines = 3
+                    }.lparams(
+                        width = matchParent,
+                        height = wrapContent
+                    )
                 }.lparams(
                     width = matchParent,
                     height = wrapContent
-                )
-                textView {
-                    id = R.id.name_league
-                    textSize = 20f
-                    typeface = Typeface.DEFAULT_BOLD
-                    textColor = Color.BLACK
-                }.lparams(
-                    width = matchParent,
-                    height = wrapContent
-                )
-                textView {
-                    id = R.id.league_loc
-                    textSize = 16f
-                }.lparams(
-                    width = matchParent,
-                    height = wrapContent
-                )
-                textView {
-                    id = R.id.league_desc
-                    textSize = 16f
-                    maxLines = 3
-                }.lparams(
-                    width = matchParent,
-                    height = wrapContent
-                )
+                ) {
+                    marginStart = 32
+                }
             }.lparams(
                 width = matchParent,
-                height = wrapContent) {
-                marginStart = 32
-            }
+                height = wrapContent)
         }
     }
 }
