@@ -1,6 +1,5 @@
 package com.dicoding.picodiploma.sejiwaproject.adapter
 
-import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -14,6 +13,7 @@ import com.dicoding.picodiploma.sejiwaproject.detail.DetailLeagueActivity.Compan
 import com.dicoding.picodiploma.sejiwaproject.model.League
 import com.dicoding.picodiploma.sejiwaproject.view.ItemLeagueUI
 import org.jetbrains.anko.AnkoContext
+import org.jetbrains.anko.startActivity
 
 class LeagueAdapter(private val list: ArrayList<League>) :
     RecyclerView.Adapter<LeagueAdapter.ListViewHolder>() {
@@ -37,9 +37,7 @@ class LeagueAdapter(private val list: ArrayList<League>) :
         holder.txtDesc.text = leagues.description
         holder.txtLocation.text = leagues.location
         holder.itemView.setOnClickListener {
-            val detailLeagueActivity = Intent(it.context, DetailLeagueActivity::class.java)
-            detailLeagueActivity.putExtra(EXTRA_KEY, list[holder.adapterPosition])
-            it.context.startActivity(detailLeagueActivity)
+            it.context.startActivity<DetailLeagueActivity>(EXTRA_KEY to leagues)
         }
 
     }
