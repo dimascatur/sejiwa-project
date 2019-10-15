@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject
+package com.dicoding.picodiploma.sejiwaproject.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

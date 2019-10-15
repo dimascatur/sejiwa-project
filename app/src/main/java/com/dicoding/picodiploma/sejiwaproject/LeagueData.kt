@@ -1,5 +1,7 @@
 package com.dicoding.picodiploma.sejiwaproject
 
+import com.dicoding.picodiploma.sejiwaproject.model.League
+
 object LeagueData {
     private val leagueNames = arrayListOf("English Premier League",
         "French Ligue 1",
