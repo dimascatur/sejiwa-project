@@ -1,7 +1,8 @@
-package com.dicoding.picodiploma.sejiwaproject
+package com.dicoding.picodiploma.sejiwaproject.view
 
 import android.content.Context
 import android.view.View
+import com.dicoding.picodiploma.sejiwaproject.R
 import org.jetbrains.anko.*
 
 
