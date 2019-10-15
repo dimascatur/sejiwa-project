@@ -1,71 +1,41 @@
 package com.dicoding.picodiploma.sejiwaproject
 
 object LeagueData {
-    private val leagueNames = arrayListOf("Arsenal",
-        "Aston Villa",
-        "Bournemouth",
-        "Brighton",
-        "Burnley",
-        "Chelsea",
-        "Crystal Palace",
-        "Everton")
+    private val leagueNames = arrayListOf("English Premier League",
+        "French Ligue 1",
+        "BundesLiga",
+        "Italian Serie A",
+        "Portuguese Primeira Li",
+        "Scottish Premier Leagu",
+        "La Liga",
+        "American Major League")
 
-    private val leagueDescription = arrayListOf("Arsenal Football Club is a professional football club based in Holloway, London which currently plays in the Premier League, the highest level of English football. One of the most successful clubs in English football, they have won 13 First Division and Premier League titles and a joint record 11 FA Cups.\n",
-        "Aston Villa Football Club (also known as Villa, The Villa, The Villans, The Lions) are a professional football club based in Witton, Birmingham, who play in the Premier League, the highest level of English football. Founded in 1874, they have played at their current home ground, Villa Park, " +
-                "since 1897. Aston Villa were founder members of The Football League in 1888. They were also founder members of the Premier League in 1992, and have remained there ever since. The club were floated by the previous owner and chairman Doug Ellis, but in 2006 full control was acquired by American businessman Randy Lerner. Lerner announced on 12 May 2014 that he is selling the club.",
-        "A.F.C. Bournemouth is a football club playing in the Championship, the second tier in the English football league system. The club plays at Dean Court in Kings Park, Boscombe, Bournemouth, Dorset and have been in existence since 1899.\n",
-        "Brighton and Hove Albion Football Club is an English football club based in the coastal city of Brighton & Hove, East Sussex. It is often referred to just as Brighton. They currently play in the Football League Championship, the second tier of the English football league system.",
-        "Burnley Football Club are a professional football club based in Burnley, Lancashire, who play in the Premier League, the highest level of English football. Nicknamed The Clarets, due to the dominant colour of their home shirts, they were one of the founder members of the Football League in 1888. " +
-                "The club colours of claret and blue were adopted in 1910 in tribute to the dominant club of English football at the time, Aston Villa. It was thought the colours might lift and inspire Burnley to emulate the aforementioned side. Their home ground since 1883 has been Turf Moor.\n",
-        "Chelsea Football Club are a professional football club based in Fulham, London, who play in the Premier League, the highest level of English football. Founded in 1905, the club have spent most of their history in the top tier of English football. The club's home ground is the 41,837-seat Stamford Bridge stadium, where they have played since their establishment.\n",
-        "Crystal Palace Football Club is an English professional football club based in South Norwood, London. They currently play in the highest level in English football, the Premier League. Since 1964, the club have mostly played in the top two leagues of English football. The club was founded in 1905 at the site of the famous Crystal Palace Exhibition building by the owners of the FA Cup Final stadium, who wanted their own team to play at the historic venue." +
-                " Palace applied to be elected to The Football League, but this was rejected and they instead joined the Southern Football League Second Division, playing home games at The Crystal Palace, inspiration for the club's initial nickname, \"The Glaziers\". Palace won the Division and promotion in their first season, and played in the Southern League First Division for the next fifteen years.\n",
-        "Everton Football Club are an English professional football club based in Liverpool, and currently playing in the Premier League. The club have competed in the top division for a record 110 seasons (missing only four seasons, in the second tier) and have won the League Championship nine times.")
+    private val leagueDescription = arrayListOf("The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL).\n",
+        "Ligue 1 (French pronunciation: League 1, formerly known as Division 1), is the French professional league for association football clubs. It is the country's primary football competition and serves as the top division of the French football league system. Ligue 1 is one of two divisions making up the Ligue de Football Professionnel, the other being Ligue 2.",
+        "The Bundesliga, is a professional association football league in Germany and the football league with the highest average stadium attendance worldwide. At the top of the German football league system, the Bundesliga is Germany's primary football competition.",
+        "Serie A, also called Serie A TIM due to sponsorship by Telecom Italia, is a professional league competition for football clubs located at the top of the Italian football league system and has been operating for over eighty years since the 1929–30 season. It had been organized by Lega Calcio until 2010, but a new league, the Lega Serie A, was created for the 2010–11 season.",
+        "The Primeira Liga (First League; Portuguese pronunciation: ), formerly called Primeira Divisão), is the top professional association football division of the Portuguese football league system.\n",
+        "The Scottish Premiership is the top division of the Scottish Professional Football League, the league competition for professional football clubs in Scotland. The Scottish Premiership was established in July 2013, after the Scottish Professional Football League was formed by a merger of the Scottish Premier League and Scottish Football League.",
+        "The Primera División, commonly known as La Liga and as La Liga Santander for sponsorship reasons, is the top professional association football division of the Spanish football league system.",
+        "Major League Soccer (MLS) is a professional soccer league representing the sport's highest level in both the United States and Canada. MLS constitutes one of the major professional sports leagues of the United States and Canada. The league is composed of 20 teams—17 in the U.S. and 3 in Canada.")
 
-    private val leagueStadium = arrayListOf("The Emirates Stadium",
-        "Villa Park",
-        "Dean Court",
-        "Falmer Stadium",
-        "Turf Moor",
-        "Stamford Bridge",
-        "Selhurst Park",
-        "Goodison Park")
+    private val leagueLocation = arrayListOf("England",
+        "France",
+        "Germany",
+        "Italia",
+        "Portugal",
+        "Scotland",
+        "Spanyol",
+        "USA")
 
-    private val leagueCoach = arrayListOf("Unai Emery",
-        "Dean Smith",
-        "Eddie Howe",
-        "Graham Potter",
-        "Sean Dyche",
-        "Frank Lampard",
-        "Roy Hodgson",
-        "Marco Silva")
-
-    private val leagueProfile = intArrayOf(R.drawable.arsenal_coach,
-        R.drawable.aston_coach,
-        R.drawable.bournemouth_coach,
-        R.drawable.brighton_coach,
-        R.drawable.burnley_coach,
-        R.drawable.chelsea_coach,
-        R.drawable.crystal_coach,
-        R.drawable.everton_coach)
-
-    private val leagueLogo = intArrayOf(R.drawable.arsenal_logo,
-        R.drawable.aston_logo,
-        R.drawable.bournemouth_logo,
-        R.drawable.brightonlogo,
-        R.drawable.burnley_logo,
-        R.drawable.chelsea_logo,
-        R.drawable.crystal_logo,
-        R.drawable.everton_logo)
-
-    private val leagueBackground = intArrayOf(R.drawable.arsenal_background,
-        R.drawable.aston_background,
-        R.drawable.aston_background,
-        R.drawable.brighton_background,
-        R.drawable.burnley_background,
-        R.drawable.chelsea_background,
-        R.drawable.crystal_background,
-        R.drawable.everton_background)
+    private val leagueLogo = intArrayOf(R.drawable.english,
+        R.drawable.france,
+        R.drawable.germany,
+        R.drawable.italia,
+        R.drawable.portugal,
+        R.drawable.scotland,
+        R.drawable.spanyol,
+        R.drawable.usa)
 
     val listData: ArrayList<League>
     get() {
@@ -75,11 +45,8 @@ object LeagueData {
             val league = League()
             league.name = leagueNames[position]
             league.description = leagueDescription[position]
-            league.stadium = leagueStadium[position]
-            league.coach = leagueCoach[position]
-            league.profileCoach = leagueProfile[position]
-            league.logo = leagueLogo[position]
-            league.background = leagueBackground[position]
+            league.location = leagueLocation[position]
+            league.photo = leagueLogo[position]
             list.add(league)
         }
         return list
