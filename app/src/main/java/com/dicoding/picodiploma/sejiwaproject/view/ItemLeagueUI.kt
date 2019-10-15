@@ -1,7 +1,11 @@
 package com.dicoding.picodiploma.sejiwaproject.view
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.Typeface
+import android.view.Gravity
 import android.view.View
+import android.widget.LinearLayout
 import com.dicoding.picodiploma.sejiwaproject.R
 import org.jetbrains.anko.*
 
@@ -9,40 +13,39 @@ import org.jetbrains.anko.*
 class ItemLeagueUI : AnkoComponent<Context> {
 
     override fun createView(ui: AnkoContext<Context>): View = with(ui){
-        return relativeLayout {
+        return linearLayout {
             padding = dip(16)
             imageView {
                 id = R.id.league_logo
                 imageResource = R.drawable.english
 
-            }.lparams(width = dip(120),
-                height = dip(120))
-            linearLayout{
+            }.lparams(width = dip(80),
+                height = dip(80))
+            verticalLayout{
                 textView{
-                    val leagueName = "English Premier League"
                     id = R.id.name_league
-                    textSize = sp(16).toFloat()
-                    text = leagueName
+                    textSize = 17f
+                    typeface = Typeface.DEFAULT_BOLD
+                    textColor = Color.BLACK
                 }.lparams(width = matchParent,
                     height = wrapContent)
                 textView{
-                    val leagueLocation = "England"
                     id = R.id.league_loc
-                    textSize = sp(14).toFloat()
-                    text = leagueLocation
+                    textSize = 12f
                 }.lparams(width = matchParent,
                     height = wrapContent)
                 textView{
-                    val clubDesc = "The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL)."
                     id = R.id.league_desc
-                    textSize = sp(14).toFloat()
-                    text = clubDesc
+                    textSize = 12f
                     maxLines = 2
                 }.lparams(width = matchParent,
                     height = wrapContent)
 
             }.lparams(width = matchParent,
-                height = wrapContent)
+                height = wrapContent){
+                orientation = LinearLayout.HORIZONTAL
+                marginStart = 32
+            }
         }
     }
 }
