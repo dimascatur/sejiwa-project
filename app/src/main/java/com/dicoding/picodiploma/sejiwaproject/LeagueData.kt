@@ -80,6 +80,7 @@ object LeagueData {
             league.profileCoach = leagueProfile[position]
             league.logo = leagueLogo[position]
             league.background = leagueBackground[position]
+            list.add(league)
         }
         return list
     }
