@@ -21,24 +21,25 @@ class LeagueAdapter(private val list: ArrayList<League>) :
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val club = list[position]
+        val leagues = list[position]
 
         Glide.with(holder.itemView.context)
-            .load(club.logo)
+            .load(leagues.photo)
             .apply(RequestOptions().override(80, 80))
             .into(holder.imgLogo)
 
-        holder.txtName.text = club.name
-        holder.txtStadium.text = club.stadium
-        holder.txtDesc.text = club.description
+        holder.txtName.text = leagues.name
+        holder.txtDesc.text = leagues.description
+        holder.txtLocation.text = leagues.location
+
 
     }
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgLogo: ImageView = itemView.findViewById(R.id.club_logo) as ImageView
-        val txtName: TextView = itemView.findViewById(R.id.name_club) as TextView
-        val txtStadium: TextView = itemView.findViewById(R.id.stadium_name) as TextView
-        val txtDesc: TextView = itemView.findViewById(R.id.club_desc) as TextView
+        val imgLogo: ImageView = itemView.findViewById(R.id.league_logo) as ImageView
+        val txtName: TextView = itemView.findViewById(R.id.name_league) as TextView
+        val txtDesc: TextView = itemView.findViewById(R.id.league_desc) as TextView
+        val txtLocation: TextView = itemView.findViewById(R.id.league_loc) as TextView
 
 
     }
