@@ -16,7 +16,6 @@ class ItemLeagueUI : AnkoComponent<Context> {
             padding = dip(16)
             imageView {
                 id = R.id.league_logo
-                imageResource = R.drawable.english
 
             }.lparams(width = dip(80),
                 height = dip(80))

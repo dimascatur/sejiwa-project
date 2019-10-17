@@ -15,7 +15,6 @@ class DetailLeagueUI : AnkoComponent<Context> {
                     imageView {
                         padding = dip(16)
                         id = R.id.league_logo
-                        imageResource = R.drawable.english
                     }.lparams(
                         width = matchParent,
                         height = wrapContent
