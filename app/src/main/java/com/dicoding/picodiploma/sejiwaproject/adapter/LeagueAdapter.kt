@@ -43,10 +43,10 @@ class LeagueAdapter(private val list: ArrayList<League>) :
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgLogo: ImageView = itemView.findViewById(R.id.league_logo) as ImageView
-        val txtName: TextView = itemView.findViewById(R.id.name_league) as TextView
-        val txtDesc: TextView = itemView.findViewById(R.id.league_desc) as TextView
-        val txtLocation: TextView = itemView.findViewById(R.id.league_loc) as TextView
+        val imgLogo: ImageView = itemView.findViewById(R.id.league_logo)
+        val txtName: TextView = itemView.findViewById(R.id.name_league)
+        val txtDesc: TextView = itemView.findViewById(R.id.league_desc)
+        val txtLocation: TextView = itemView.findViewById(R.id.league_loc)
 
 
     }
