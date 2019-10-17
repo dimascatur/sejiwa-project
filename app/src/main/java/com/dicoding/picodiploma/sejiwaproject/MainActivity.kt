@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         rvLeague = findViewById(R.id.rv_league)
         rvLeague.setHasFixedSize(true)
 
-        list.addAll(LeagueData.listData)
+        initData()
         showRecyclerList()
     }
 
@@ -31,5 +31,23 @@ class MainActivity : AppCompatActivity() {
         rvLeague.layoutManager = LinearLayoutManager(this)
         val listLeagueAdapter = LeagueAdapter(list)
         rvLeague.adapter = listLeagueAdapter
+    }
+
+    private fun initData(){
+        val name = resources.getStringArray(R.array.leagueNames)
+        val description = resources.getStringArray(R.array.leagueDescription)
+        val location = resources.getStringArray(R.array.leagueLocation)
+        val logo = resources.obtainTypedArray(R.array.leagueLogo)
+        list = name.mapIndexed { index, leagueNames ->
+            League().apply {
+                this.name = leagueNames
+                this.description = description[index]
+                this.location = location[index]
+                    this.photo = logo.getResourceId(index, 0)
+
+            }
+        } as ArrayList<League>
+
+        logo.recycle()
     }
 }
