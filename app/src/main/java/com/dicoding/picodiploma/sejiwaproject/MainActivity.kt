@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.adapter.LeagueAdapter
 import com.dicoding.picodiploma.sejiwaproject.db.LeagueData
 import com.dicoding.picodiploma.sejiwaproject.model.League
+import com.dicoding.picodiploma.sejiwaproject.view.MainActivityUI
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
 
@@ -26,18 +27,6 @@ class MainActivity : AppCompatActivity() {
         showRecyclerList()
     }
 
-    class MainActivityUI : AnkoComponent<MainActivity> {
-        override fun createView(ui: AnkoContext<MainActivity>) = with(ui) {
-            recyclerView {
-                id = R.id.rv_league
-                layoutManager = LinearLayoutManager(context)
-                lparams(width = matchParent, height = matchParent)
-                padding = dip(16)
-                clipToPadding = false
-
-            }
-        }
-    }
 
     private fun showRecyclerList() {
         rvLeague.layoutManager = LinearLayoutManager(this)
