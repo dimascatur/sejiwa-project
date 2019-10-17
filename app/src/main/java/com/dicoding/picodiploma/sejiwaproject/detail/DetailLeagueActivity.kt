@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.model.League
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.view.DetailLeagueUI
@@ -21,10 +23,13 @@ class DetailLeagueActivity : AppCompatActivity() {
         val txtLocation: TextView = findViewById(R.id.league_loc)
 
         val nameLeague = intent.getParcelableExtra<League>(EXTRA_KEY)
-        imgLogo.setImageResource(nameLeague.photo)
-        txtName.text = nameLeague.name
-        txtDesc.text = nameLeague.description
-        txtLocation.text = nameLeague.location
+        Glide.with(this)
+            .load(nameLeague?.photo ?:R.drawable.english)
+            .apply(RequestOptions().override(550, 550))
+            .into(imgLogo)
+        txtName.text = nameLeague?.name
+        txtDesc.text = nameLeague?.description
+        txtLocation.text = nameLeague?.location
 
     }
     companion object {
