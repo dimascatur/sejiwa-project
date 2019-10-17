@@ -1,15 +1,14 @@
 package com.dicoding.picodiploma.sejiwaproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.adapter.LeagueAdapter
 import com.dicoding.picodiploma.sejiwaproject.db.LeagueData
 import com.dicoding.picodiploma.sejiwaproject.model.League
 import com.dicoding.picodiploma.sejiwaproject.view.MainActivityUI
-import org.jetbrains.anko.*
-import org.jetbrains.anko.recyclerview.v7.recyclerView
+import org.jetbrains.anko.setContentView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvLeague: RecyclerView
