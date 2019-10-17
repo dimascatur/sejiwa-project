@@ -21,9 +21,8 @@ class LeagueAdapter(private val list: ArrayList<League>) :
         return ListViewHolder(ItemLeagueUI().createView(AnkoContext.create(parent.context)))
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    override fun getItemCount() = list.size
+
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val leagues = list[position]
