@@ -42,18 +42,13 @@ object LeagueData {
         R.drawable.usa
     )
 
-    val listData: ArrayList<League>
-    get() {
+    val listData = leagueNames.mapIndexed { index, leagueName ->
+        League().apply {
 
-        val list = arrayListOf<League>()
-        for (position in leagueNames.indices) {
-            val league = League()
-            league.name = leagueNames[position]
-            league.description = leagueDescription[position]
-            league.location = leagueLocation[position]
-            league.photo = leagueLogo[position]
-            list.add(league)
+       name = leagueName
+            description = leagueDescription[index]
+            location = leagueLocation[index]
+            photo = leagueLogo[index]
         }
-        return list
-    }
+    }as ArrayList<League>
 }
