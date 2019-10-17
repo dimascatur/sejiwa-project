@@ -5,8 +5,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class League(
-    var name: String? = "",
-    var description: String? = "",
-    var location: String?= "",
-    var photo: Int? = 0
+    val name: String? ,
+    val description: String? ,
+    val location: String? ,
+    val photo: Int?
 ) : Parcelable

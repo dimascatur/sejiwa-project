@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rvLeague: RecyclerView
     private var list: ArrayList<League> = arrayListOf()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MainActivityUI().setContentView(this)
@@ -37,16 +36,13 @@ class MainActivity : AppCompatActivity() {
         val description = resources.getStringArray(R.array.leagueDescription)
         val location = resources.getStringArray(R.array.leagueLocation)
         val logo = resources.obtainTypedArray(R.array.leagueLogo)
-        list = name.mapIndexed { index, leagueNames ->
-            League().apply {
-                this.name = leagueNames
-                this.description = description[index]
-                this.location = location[index]
-                    this.photo = logo.getResourceId(index, 0)
 
+        for (i in name.indices) {
+            list.add(League(name[i],
+                description[i],
+                location[i],
+                logo.getResourceId(i, 0)))
             }
-        } as ArrayList<League>
-
         logo.recycle()
     }
 }
