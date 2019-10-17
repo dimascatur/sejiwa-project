@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.adapter.LeagueAdapter
-import com.dicoding.picodiploma.sejiwaproject.db.LeagueData
+import com.dicoding.picodiploma.sejiwaproject.data.LeagueData
 import com.dicoding.picodiploma.sejiwaproject.model.League
 import com.dicoding.picodiploma.sejiwaproject.view.MainActivityUI
 import org.jetbrains.anko.setContentView

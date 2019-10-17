@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.db
+package com.dicoding.picodiploma.sejiwaproject.data
 
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.model.League
