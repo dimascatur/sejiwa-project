@@ -8,8 +8,8 @@ object LeagueData {
         "French Ligue 1",
         "BundesLiga",
         "Italian Serie A",
-        "Portuguese Primeira Li",
-        "Scottish Premier Leagu",
+        "Portuguese Primeira Liga",
+        "Scottish Premier League",
         "La Liga",
         "American Major League")
 
