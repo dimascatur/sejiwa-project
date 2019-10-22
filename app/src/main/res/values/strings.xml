@@ -6,7 +6,7 @@
     <string name="description">Description</string>
     <string name="location">Location</string>
 
-    <string-array name="leagueNames">
+    <array name="league">
         <item>English Premier League</item>
         <item>French Ligue 1</item>
         <item>BundesLiga</item>
@@ -15,7 +15,7 @@
         <item>Scottish Premier League</item>
         <item>La Liga</item>
         <item>American Major League</item>
-    </string-array>
+    </array>
 
     <string-array name="leagueDescription">
         <item>The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL).</item>

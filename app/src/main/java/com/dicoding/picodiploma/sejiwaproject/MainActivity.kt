@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initData(){
-        val name = resources.getStringArray(R.array.leagueNames)
+        val name = resources.getStringArray(R.array.league)
         val description = resources.getStringArray(R.array.leagueDescription)
         val location = resources.getStringArray(R.array.leagueLocation)
         val logo = resources.obtainTypedArray(R.array.leagueLogo)
