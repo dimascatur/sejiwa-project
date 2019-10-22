@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/league_logo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         tools:src="@drawable/english" />
