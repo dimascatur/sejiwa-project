@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.sejiwaproject.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -11,14 +12,13 @@ import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.detail.DetailLeagueActivity
 import com.dicoding.picodiploma.sejiwaproject.detail.DetailLeagueActivity.Companion.EXTRA_KEY
 import com.dicoding.picodiploma.sejiwaproject.model.League
-import com.dicoding.picodiploma.sejiwaproject.view.ItemLeagueUI
-import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.startActivity
 
 class LeagueAdapter(private val list: ArrayList<League>) :
     RecyclerView.Adapter<LeagueAdapter.ListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        return ListViewHolder(ItemLeagueUI().createView(AnkoContext.create(parent.context)))
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_leagues, parent, false)
+        return ListViewHolder(view)
     }
 
     override fun getItemCount() = list.size

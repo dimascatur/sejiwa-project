@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.adapter.LeagueAdapter
 import com.dicoding.picodiploma.sejiwaproject.model.League
-import com.dicoding.picodiploma.sejiwaproject.view.MainActivityUI
-import org.jetbrains.anko.setContentView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvLeague: RecyclerView
@@ -15,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MainActivityUI().setContentView(this)
+        setContentView(R.layout.activity_main)
 
         rvLeague = findViewById(R.id.rv_league)
         rvLeague.setHasFixedSize(true)

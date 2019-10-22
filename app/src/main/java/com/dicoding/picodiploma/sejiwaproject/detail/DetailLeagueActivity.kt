@@ -1,21 +1,19 @@
 package com.dicoding.picodiploma.sejiwaproject.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.dicoding.picodiploma.sejiwaproject.model.League
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.view.DetailLeagueUI
-import org.jetbrains.anko.setContentView
+import com.dicoding.picodiploma.sejiwaproject.model.League
 
 class DetailLeagueActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DetailLeagueUI().setContentView(this)
+        setContentView(R.layout.activity_detail)
 
         val imgLogo: ImageView = findViewById(R.id.league_logo)
         val txtName: TextView = findViewById(R.id.name_league)
