@@ -5,6 +5,8 @@
     <string name="desc">The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL)</string>
     <string name="description">Description</string>
     <string name="location">Location</string>
+    <string name="formed_year">Since</string>
+    <string name="dummy_year">1980</string>
 
     <array name="league">
         <item>English Premier League</item>
@@ -60,5 +62,9 @@
         <item>@drawable/spanyol</item>
         <item>@drawable/usa</item>
     </array>
+    <string name="title_activity_detail_move">DetailMoveActivity</string>
+    <string name="tab_1">Next Match</string>
+    <string name="tab_2">Previous Match</string>
+    <string name="title_activity_detail_tab">DetailTabActivity</string>
 
 </resources>
