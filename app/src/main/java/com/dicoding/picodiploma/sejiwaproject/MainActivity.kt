@@ -30,13 +30,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initData(){
+        val id = resources.getStringArray(R.array.leagueID)
         val name = resources.getStringArray(R.array.league)
         val description = resources.getStringArray(R.array.leagueDescription)
         val location = resources.getStringArray(R.array.leagueLocation)
         val logo = resources.obtainTypedArray(R.array.leagueLogo)
 
-        for (i in name.indices) {
-            list.add(League(name[i],
+        for (i in id.indices) {
+            list.add(
+                League(id[i],
+                name[i],
                 description[i],
                 location[i],
                 logo.getResourceId(i, 0)))
