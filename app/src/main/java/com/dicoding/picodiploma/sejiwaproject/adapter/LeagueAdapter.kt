@@ -36,7 +36,7 @@ class LeagueAdapter(private val list: ArrayList<League>) :
         holder.txtDesc.text = leagues.description
         holder.txtLocation.text = leagues.location
         holder.itemView.setOnClickListener {
-            it.context.startActivity<DetailLeagueActivity>(EXTRA_KEY to leagues)
+            it.context.startActivity<DetailLeagueActivity>(EXTRA_KEY to leagues.id)
         }
 
     }
