@@ -1,7 +1,10 @@
 package com.dicoding.picodiploma.sejiwaproject.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Leagues(
     @SerializedName( "idLeague")
     var teamId: String? = null,
@@ -23,4 +26,4 @@ data class Leagues(
 
     @SerializedName("strPoster")
     var teamPoster: String? = null
-)
+) :Parcelable
