@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.detail.ui.main
+package com.dicoding.picodiploma.sejiwaproject.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,8 +10,8 @@ class PageViewModel : ViewModel() {
 
     private val _index = MutableLiveData<Int>()
     val text: LiveData<String> = Transformations.map(_index) {
-        "Hello world from section: $it"
-    }
+        "Name League: $it"
+}
 
     fun setIndex(index: Int) {
         _index.value = index
