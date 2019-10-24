@@ -15,15 +15,9 @@ data class Leagues(
     @SerializedName("strCountry")
     var teamLocation: String? = null,
 
-    @SerializedName("strDescriptionEN")
-    var teamDescription: String? = null,
-
     @SerializedName("intFormedYear")
     var teamFormed: String? = null,
 
-    @SerializedName("strBadge")
-    var teamBadge: String? = null,
-
-    @SerializedName("strPoster")
+    @SerializedName("strFanart1")
     var teamPoster: String? = null
 ) :Parcelable
