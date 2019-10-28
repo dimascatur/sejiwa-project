@@ -1,6 +1,7 @@
-package com.dicoding.picodiploma.sejiwaproject.ui.match
+package com.dicoding.picodiploma.sejiwaproject.match
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,14 +11,33 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.ui.main.PageViewModel
+import com.dicoding.picodiploma.sejiwaproject.api.ApiRepository
+import com.dicoding.picodiploma.sejiwaproject.main.PageViewModel
+import com.dicoding.picodiploma.sejiwaproject.model.previousMatch.Matchs
+import com.google.gson.Gson
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class MatchFragment : Fragment() {
+class MatchFragment : Fragment(), MatchView {
+    override fun showLoading() {
+    }
+
+    override fun hideLoading() {
+    }
+
+    override fun showDetailList(data: List<Matchs>) {
+        Log.d("size","" + data.size )
+        rvMatch.layoutManager = LinearLayoutManager(context)
+        val listLeagueAdapter = MatchLeagueAdapter(data)
+        rvMatch.adapter = listLeagueAdapter
+    }
+
     private lateinit var rvMatch: RecyclerView
     private lateinit var pageViewModel: PageViewModel
+    private lateinit var presenter: MatchPresenter
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,24 +57,32 @@ class MatchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvMatch = view.findViewById(R.id.rv_match)
-        rvMatch.layoutManager = LinearLayoutManager(activity)
         rvMatch.setHasFixedSize(true)
+
+        val id = arguments?.getString(ID_LEAGUE)
+
+        val request = ApiRepository()
+        val gson = Gson()
+        presenter = MatchPresenter(this, request, gson)
+        presenter.getMatchList(id ?: "4328")
+
 
     }
     companion object {
 
 
         private const val ARG_SECTION_NUMBER = "section_number"
+        private const val ID_LEAGUE = "id"
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
         @JvmStatic
-        fun newInstance(sectionNumber: Int): MatchFragment {
+        fun newInstance( idLeague: String): MatchFragment {
             return MatchFragment().apply {
                 arguments = Bundle().apply {
-                    putInt(ARG_SECTION_NUMBER, sectionNumber)
+                    putString(ID_LEAGUE, idLeague)
                 }
             }
         }

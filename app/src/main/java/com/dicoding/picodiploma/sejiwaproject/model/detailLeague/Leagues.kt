@@ -19,5 +19,8 @@ data class Leagues(
     var teamFormed: String? = null,
 
     @SerializedName("strFanart1")
-    var teamPoster: String? = null
+    var teamPoster: String? = null,
+
+    @SerializedName("strBadge")
+    var teamLogo: String? = null
 ) :Parcelable
