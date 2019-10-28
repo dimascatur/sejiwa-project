@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.model
+package com.dicoding.picodiploma.sejiwaproject.model.detailLeague
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
