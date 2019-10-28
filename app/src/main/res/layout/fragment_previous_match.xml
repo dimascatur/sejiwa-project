@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_match"
+        android:id="@+id/rv_previous_match"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        tools:listitem="@layout/item_match" />
+        tools:listitem="@layout/item_previous_match" />
 </RelativeLayout>
