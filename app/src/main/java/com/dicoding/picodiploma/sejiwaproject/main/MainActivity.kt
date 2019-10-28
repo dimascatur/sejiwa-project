@@ -1,11 +1,12 @@
-package com.dicoding.picodiploma.sejiwaproject
+package com.dicoding.picodiploma.sejiwaproject.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.adapter.LeagueAdapter
-import com.dicoding.picodiploma.sejiwaproject.model.League
+import com.dicoding.picodiploma.sejiwaproject.model.local.League
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvLeague: RecyclerView
@@ -38,11 +39,14 @@ class MainActivity : AppCompatActivity() {
 
         for (i in id.indices) {
             list.add(
-                League(id[i],
-                name[i],
-                description[i],
-                location[i],
-                logo.getResourceId(i, 0)))
+                League(
+                    id[i],
+                    name[i],
+                    description[i],
+                    location[i],
+                    logo.getResourceId(i, 0)
+                )
+            )
             }
         logo.recycle()
     }

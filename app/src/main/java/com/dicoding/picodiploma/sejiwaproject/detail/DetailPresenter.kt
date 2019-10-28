@@ -2,7 +2,7 @@ package com.dicoding.picodiploma.sejiwaproject.detail
 
 import com.dicoding.picodiploma.sejiwaproject.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.api.TheSportDBApi
-import com.dicoding.picodiploma.sejiwaproject.model.LeaguesResponse
+import com.dicoding.picodiploma.sejiwaproject.model.detailLeague.LeaguesResponse
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

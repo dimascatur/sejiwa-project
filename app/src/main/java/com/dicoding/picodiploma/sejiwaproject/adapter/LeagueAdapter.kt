@@ -11,7 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.detail.DetailLeagueActivity
 import com.dicoding.picodiploma.sejiwaproject.detail.DetailLeagueActivity.Companion.EXTRA_KEY
-import com.dicoding.picodiploma.sejiwaproject.model.League
+import com.dicoding.picodiploma.sejiwaproject.model.local.League
 import org.jetbrains.anko.startActivity
 
 class LeagueAdapter(private val list: ArrayList<League>) :

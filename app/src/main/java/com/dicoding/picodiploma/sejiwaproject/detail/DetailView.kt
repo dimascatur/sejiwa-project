@@ -1,6 +1,6 @@
 package com.dicoding.picodiploma.sejiwaproject.detail
 
-import com.dicoding.picodiploma.sejiwaproject.model.Leagues
+import com.dicoding.picodiploma.sejiwaproject.model.detailLeague.Leagues
 
 interface DetailView {
     fun showLoading()

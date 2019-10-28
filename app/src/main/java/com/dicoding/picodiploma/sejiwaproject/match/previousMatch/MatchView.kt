@@ -1,10 +1,10 @@
-package com.dicoding.picodiploma.sejiwaproject.match
+package com.dicoding.picodiploma.sejiwaproject.match.previousMatch
 
 import com.dicoding.picodiploma.sejiwaproject.model.previousMatch.Matchs
 
 interface MatchView{
     fun showLoading()
     fun hideLoading()
-    fun showDetailList(data: List<Matchs>)
+    fun showPreviousMatch(data: List<Matchs>)
 
 }

@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.match
+package com.dicoding.picodiploma.sejiwaproject.match.previousMatch
 
 import android.os.Bundle
 import android.util.Log
@@ -19,25 +19,11 @@ import com.google.gson.Gson
 /**
  * A placeholder fragment containing a simple view.
  */
-class MatchFragment : Fragment(), MatchView {
-    override fun showLoading() {
-    }
-
-    override fun hideLoading() {
-    }
-
-    override fun showDetailList(data: List<Matchs>) {
-        Log.d("size","" + data.size )
-        rvMatch.layoutManager = LinearLayoutManager(context)
-        val listLeagueAdapter = MatchLeagueAdapter(data)
-        rvMatch.adapter = listLeagueAdapter
-    }
-
+class MatchFragment : Fragment(),
+    MatchView {
     private lateinit var rvMatch: RecyclerView
     private lateinit var pageViewModel: PageViewModel
     private lateinit var presenter: MatchPresenter
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,22 +35,26 @@ class MatchFragment : Fragment(), MatchView {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        val root = inflater.inflate(R.layout.fragment_detail_tab, container, false)
+        val root = inflater.inflate(R.layout.fragment_previous_match, container, false)
         pageViewModel.text.observe(this, Observer<String> {})
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rvMatch = view.findViewById(R.id.rv_match)
+        rvMatch = view.findViewById(R.id.rv_previous_match)
         rvMatch.setHasFixedSize(true)
 
         val id = arguments?.getString(ID_LEAGUE)
 
         val request = ApiRepository()
         val gson = Gson()
-        presenter = MatchPresenter(this, request, gson)
-        presenter.getMatchList(id ?: "4328")
+        presenter = MatchPresenter(
+            this,
+            request,
+            gson
+        )
+        presenter.getPreviousMatch(id ?: "4328")
 
 
     }
@@ -86,5 +76,19 @@ class MatchFragment : Fragment(), MatchView {
                 }
             }
         }
+    }
+
+    override fun showLoading() {
+    }
+
+    override fun hideLoading() {
+    }
+
+    override fun showPreviousMatch(data: List<Matchs>) {
+        Log.d("size","" + data.size )
+        rvMatch.layoutManager = LinearLayoutManager(context)
+        val listLeagueAdapter =
+            MatchLeagueAdapter(data)
+        rvMatch.adapter = listLeagueAdapter
     }
 }

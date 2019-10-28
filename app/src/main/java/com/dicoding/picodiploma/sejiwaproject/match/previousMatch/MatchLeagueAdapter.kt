@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.match
+package com.dicoding.picodiploma.sejiwaproject.match.previousMatch
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import com.dicoding.picodiploma.sejiwaproject.model.previousMatch.Matchs
 
 class MatchLeagueAdapter(private val list: List<Matchs>) : RecyclerView.Adapter<MatchLeagueAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_match, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_previous_match, parent, false)
         return MatchViewHolder(view)
     }
 

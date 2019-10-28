@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.match
+package com.dicoding.picodiploma.sejiwaproject.match.previousMatch
 
 import com.dicoding.picodiploma.sejiwaproject.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.api.TheSportDBApi
@@ -11,7 +11,7 @@ class MatchPresenter(
     private val view: MatchView,
     private val apiRepository: ApiRepository,
     private val gson: Gson) {
-    fun getMatchList(id: String) {
+    fun getPreviousMatch(id: String) {
         view.showLoading()
         doAsync {
             val data = gson.fromJson(
@@ -21,7 +21,7 @@ class MatchPresenter(
             )
             uiThread {
                 view.hideLoading()
-                view.showDetailList(data.events)
+                view.showPreviousMatch(data.events)
             }
         }
     }

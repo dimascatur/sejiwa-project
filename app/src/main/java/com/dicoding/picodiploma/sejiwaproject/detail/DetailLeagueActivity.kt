@@ -2,16 +2,16 @@ package com.dicoding.picodiploma.sejiwaproject.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.api.ApiRepository
-import com.dicoding.picodiploma.sejiwaproject.model.Leagues
-import com.dicoding.picodiploma.sejiwaproject.ui.main.SectionsPagerAdapter
+import com.dicoding.picodiploma.sejiwaproject.main.SectionsPagerAdapter
+import com.dicoding.picodiploma.sejiwaproject.match.nextMatch.NextMatchFragment
+import com.dicoding.picodiploma.sejiwaproject.match.previousMatch.MatchFragment
+import com.dicoding.picodiploma.sejiwaproject.model.detailLeague.Leagues
 import com.dicoding.picodiploma.sejiwaproject.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.utils.visible
-import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_detail.*
 
@@ -33,9 +33,11 @@ class DetailLeagueActivity : AppCompatActivity(), DetailView {
 
         val sectionsPagerAdapter =
             SectionsPagerAdapter(
-                this,
                 supportFragmentManager
             )
+
+        sectionsPagerAdapter.populateFragment(MatchFragment.newInstance(nameLeague?: "4328"), "Previous Match")
+        sectionsPagerAdapter.populateFragment(NextMatchFragment.newInstance(nameLeague?: "4328"), "Next Match")
         view_pager_detail.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager_detail)
 
@@ -63,6 +65,11 @@ class DetailLeagueActivity : AppCompatActivity(), DetailView {
             .load(data[0].teamPoster)
             .apply(RequestOptions().override(550, 550))
             .into(league_badge)
+
+        Glide.with(this)
+            .load(data[0].teamLogo)
+            .apply(RequestOptions().override(550, 550))
+            .into(league_logo)
 
         leagues.clear()
         leagues.addAll(data)
