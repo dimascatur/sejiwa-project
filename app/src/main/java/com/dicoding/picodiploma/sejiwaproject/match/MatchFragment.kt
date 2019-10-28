@@ -1,22 +1,21 @@
-package com.dicoding.picodiploma.sejiwaproject.ui.main
+package com.dicoding.picodiploma.sejiwaproject.ui.match
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.detail.DetailPresenter
-import com.dicoding.picodiploma.sejiwaproject.model.Leagues
+import com.dicoding.picodiploma.sejiwaproject.ui.main.PageViewModel
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class DetailLeagueFragment : Fragment() {
+class MatchFragment : Fragment() {
     private lateinit var rvMatch: RecyclerView
     private lateinit var pageViewModel: PageViewModel
 
@@ -38,6 +37,7 @@ class DetailLeagueFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvMatch = view.findViewById(R.id.rv_match)
+        rvMatch.layoutManager = LinearLayoutManager(activity)
         rvMatch.setHasFixedSize(true)
 
     }
@@ -51,8 +51,8 @@ class DetailLeagueFragment : Fragment() {
          * number.
          */
         @JvmStatic
-        fun newInstance(sectionNumber: Int): DetailLeagueFragment {
-            return DetailLeagueFragment().apply {
+        fun newInstance(sectionNumber: Int): MatchFragment {
+            return MatchFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_SECTION_NUMBER, sectionNumber)
                 }

@@ -66,5 +66,10 @@
     <string name="tab_1">Next Match</string>
     <string name="tab_2">Previous Match</string>
     <string name="title_activity_detail_tab">DetailTabActivity</string>
+    <string name="match_title">Match</string>
+    <string name="dummy">:</string>
+    <string name="score">0</string>
+    <string name="team_title">nama team</string>
+    <string name="ft">FT</string>
 
 </resources>

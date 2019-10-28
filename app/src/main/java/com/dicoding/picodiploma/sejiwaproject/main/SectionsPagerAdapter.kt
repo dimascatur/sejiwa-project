@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.dicoding.picodiploma.sejiwaproject.R
+import com.dicoding.picodiploma.sejiwaproject.ui.match.MatchFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_1,
@@ -20,8 +21,8 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
 
     override fun getItem(position: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.
-        // Return a DetailLeagueFragment (defined as a static inner class below).
-        return DetailLeagueFragment.newInstance(
+        // Return a MatchFragment (defined as a static inner class below).
+        return MatchFragment.newInstance(
             position + 1
         )
     }
