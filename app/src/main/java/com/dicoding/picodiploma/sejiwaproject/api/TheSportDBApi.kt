@@ -16,7 +16,7 @@ object TheSportDBApi {
             .toString()
     }
 
-    fun getMatchs(idEvent: String?): String {
+    fun getPreviousMatchs(idEvent: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")

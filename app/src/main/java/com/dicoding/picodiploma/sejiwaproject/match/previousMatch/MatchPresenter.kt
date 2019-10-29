@@ -16,7 +16,7 @@ class MatchPresenter(
         doAsync {
             val data = gson.fromJson(
                 apiRepository
-                    .doRequest(TheSportDBApi.getMatchs(id)),
+                    .doRequest(TheSportDBApi.getPreviousMatchs(id)),
                 MatchsResponse::class.java
             )
             uiThread {
