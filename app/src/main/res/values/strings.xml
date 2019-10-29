@@ -71,4 +71,9 @@
     <string name="score">0</string>
     <string name="team_title">nama team</string>
     <string name="ft">FT</string>
+    <string name="goal">Goal</string>
+    <string name="dummy_score">-</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="red_card">Red Card</string>
+    <string name="dummy_max_score">10</string>
 </resources>
