@@ -2,6 +2,7 @@ package com.dicoding.picodiploma.sejiwaproject.detailMatch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.picodiploma.sejiwaproject.R
 
 class DetailMatchActivity : AppCompatActivity() {
 

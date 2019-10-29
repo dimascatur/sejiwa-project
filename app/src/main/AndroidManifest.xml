@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".detailMatch.DetailMatchActivity"></activity>
         <activity android:name=".detail.DetailLeagueActivity" />
         <activity android:name=".main.MainActivity">
             <intent-filter>
