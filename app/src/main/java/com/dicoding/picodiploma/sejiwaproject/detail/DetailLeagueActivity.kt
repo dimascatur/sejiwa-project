@@ -23,7 +23,6 @@ class DetailLeagueActivity : AppCompatActivity(), DetailView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-
         val nameLeague = intent.getStringExtra(EXTRA_KEY)
 
         val request = ApiRepository()
@@ -57,19 +56,27 @@ class DetailLeagueActivity : AppCompatActivity(), DetailView {
     }
 
     override fun showDetailList(data: List<Leagues>) {
-        name_league.text = data[0].teamName
-        league_loc.text = data[0].teamLocation
-        league_formed.text = data[0].teamFormed
+        if (data[0].teamName.isNullOrEmpty()){
+            name_league.invisible()
+            league_loc.invisible()
+            league_formed.invisible()
+            league_badge.invisible()
+            league_logo.invisible()
+        } else {
+            name_league.text = data[0].teamName
+            league_loc.text = data[0].teamLocation
+            league_formed.text = data[0].teamFormed
 
-        Glide.with(this)
-            .load(data[0].teamPoster)
-            .apply(RequestOptions().override(550, 550))
-            .into(league_badge)
+            Glide.with(this)
+                .load(data[0].teamPoster)
+                .apply(RequestOptions().override(550, 550))
+                .into(league_badge)
 
-        Glide.with(this)
-            .load(data[0].teamLogo)
-            .apply(RequestOptions().override(550, 550))
-            .into(league_logo)
+            Glide.with(this)
+                .load(data[0].teamLogo)
+                .apply(RequestOptions().override(550, 550))
+                .into(league_logo)
+        }
 
         leagues.clear()
         leagues.addAll(data)
