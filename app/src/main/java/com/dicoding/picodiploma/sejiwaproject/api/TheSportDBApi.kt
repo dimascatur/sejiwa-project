@@ -42,13 +42,38 @@ object TheSportDBApi {
 
     fun getMatchDetail(idEvent: String?): String {
         return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+    .appendPath("api")
+    .appendPath("v1")
+    .appendPath("json")
+    .appendPath(BuildConfig.TSDB_API_KEY)
+    .appendPath("lookupevent.php")
+    .appendQueryParameter("id", idEvent)
+    .build()
+    .toString()
+}
+
+    fun getTeamDetail(idTeam: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
             .appendPath("api")
             .appendPath("v1")
             .appendPath("json")
             .appendPath(BuildConfig.TSDB_API_KEY)
-            .appendPath("lookupevent.php")
-            .appendQueryParameter("id", idEvent)
+            .appendPath("lookupteam.php")
+            .appendQueryParameter("id", idTeam)
             .build()
             .toString()
+    }
+
+    fun getSearchMatch(event: String?): String {
+        return Uri.parse(BuildConfig.BASE_URL).buildUpon()
+            .appendPath("api")
+            .appendPath("v1")
+            .appendPath("json")
+            .appendPath(BuildConfig.TSDB_API_KEY)
+            .appendPath("searchevents.php")
+            .appendQueryParameter("e", event)
+            .build()
+            .toString()
+
     }
 }
