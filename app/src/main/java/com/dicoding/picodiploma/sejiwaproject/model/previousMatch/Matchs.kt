@@ -22,5 +22,8 @@ data class Matchs(
     var homeScore: String? = null,
 
     @SerializedName("intAwayScore")
-    var awayScore: String? = null
+    var awayScore: String? = null,
+
+    @SerializedName("dateEvent")
+    var dateMatch: String? = null
 ):Parcelable
