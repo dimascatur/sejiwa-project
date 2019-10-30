@@ -6,6 +6,12 @@ data class DetailMatch(
     @SerializedName("idEvent")
     var matchId: String? = null,
 
+    @SerializedName("idHomeTeam")
+    var homeId: String? = null,
+
+    @SerializedName("idAwayTeam")
+    var awayId: String? = null,
+
     @SerializedName("strEvent")
     var matchTitle: String? = null,
 
