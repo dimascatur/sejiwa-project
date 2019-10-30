@@ -6,7 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
+import com.dicoding.picodiploma.sejiwaproject.detailMatch.DetailMatchActivity
+import com.dicoding.picodiploma.sejiwaproject.detailMatch.DetailMatchActivity.Companion.EXTRA_ID
 import com.dicoding.picodiploma.sejiwaproject.model.previousMatch.Matchs
+import org.jetbrains.anko.startActivity
+
 
 class MatchLeagueAdapter(private val list: List<Matchs>) : RecyclerView.Adapter<MatchLeagueAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
@@ -23,6 +27,10 @@ class MatchLeagueAdapter(private val list: List<Matchs>) : RecyclerView.Adapter<
         holder.awayTeam.text = match.teamAway
         holder.homeScore.text = match.homeScore
         holder.awayScore.text = match.awayScore
+        holder.dateMatch.text = match.dateMatch
+        holder.itemView.setOnClickListener {
+            it.context.startActivity<DetailMatchActivity>(EXTRA_ID to match.matchId)
+        }
     }
 
     inner class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,9 +39,7 @@ class MatchLeagueAdapter(private val list: List<Matchs>) : RecyclerView.Adapter<
         val awayTeam: TextView = itemView.findViewById(R.id.team_away)
         val homeScore: TextView = itemView.findViewById(R.id.home_score)
         val awayScore: TextView = itemView.findViewById(R.id.away_score)
-
-
-
+        val dateMatch: TextView = itemView.findViewById(R.id.date_match)
     }
 
 }
