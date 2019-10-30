@@ -74,4 +74,7 @@
     <string name="dummy_max_score">10</string>
     <string name="vs">VS</string>
     <string name="next_match">Next Match</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Enter the word</string>
+    <string name="dummy_date">2019-10-30</string>
 </resources>
