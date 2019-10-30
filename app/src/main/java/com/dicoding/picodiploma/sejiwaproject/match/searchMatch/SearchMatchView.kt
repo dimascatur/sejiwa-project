@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.searchMatch
+package com.dicoding.picodiploma.sejiwaproject.match.searchMatch
 
 import com.dicoding.picodiploma.sejiwaproject.model.searchMatch.SearchMatch
 

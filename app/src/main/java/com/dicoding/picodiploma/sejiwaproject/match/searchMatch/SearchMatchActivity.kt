@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.searchMatch
+package com.dicoding.picodiploma.sejiwaproject.match.searchMatch
 
 import android.app.SearchManager
 import android.content.Context
@@ -14,7 +14,8 @@ import com.dicoding.picodiploma.sejiwaproject.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.model.searchMatch.SearchMatch
 import com.google.gson.Gson
 
-class SearchMatchActivity : AppCompatActivity(), SearchMatchView {
+class SearchMatchActivity : AppCompatActivity(),
+    SearchMatchView {
     private lateinit var rvMatch: RecyclerView
     private lateinit var presenter: SearchMatchPresenter
 
@@ -26,7 +27,11 @@ class SearchMatchActivity : AppCompatActivity(), SearchMatchView {
 
         val request = ApiRepository()
         val gson = Gson()
-        presenter = SearchMatchPresenter(this, request, gson)
+        presenter = SearchMatchPresenter(
+            this,
+            request,
+            gson
+        )
 
     }
 

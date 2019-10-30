@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.searchMatch
+package com.dicoding.picodiploma.sejiwaproject.match.searchMatch
 
 import android.view.LayoutInflater
 import android.view.View

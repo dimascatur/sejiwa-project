@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".searchMatch.SearchMatchActivity"
+        <activity android:name=".match.searchMatch.SearchMatchActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
         <activity android:name=".detailMatch.DetailMatchActivity" />
         <activity android:name=".detail.DetailLeagueActivity" />
