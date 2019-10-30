@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.adapter.LeagueAdapter
-import com.dicoding.picodiploma.sejiwaproject.model.local.League
 import com.dicoding.picodiploma.sejiwaproject.match.searchMatch.SearchMatchActivity
+import com.dicoding.picodiploma.sejiwaproject.model.local.League
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvLeague: RecyclerView
