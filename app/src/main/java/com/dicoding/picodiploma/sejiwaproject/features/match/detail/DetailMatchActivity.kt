@@ -78,8 +78,8 @@ class DetailMatchActivity : AppCompatActivity(),
 
         matchs.clear()
         matchs.addAll(data)
-        presenter.getDetailTeam(data[0].homeId, true)
-        presenter.getDetailTeam(data[0].awayId, false)
+        presenter.getTeamLogo(data[0].homeId, true)
+        presenter.getTeamLogo(data[0].awayId, false)
 
     }
 

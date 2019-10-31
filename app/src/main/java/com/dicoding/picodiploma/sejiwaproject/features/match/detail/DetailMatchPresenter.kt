@@ -24,7 +24,7 @@ class DetailMatchPresenter (private val view: DetailMatchView,
             }
         }
     }
-    fun getDetailTeam(id: String?, isHome: Boolean){
+    fun getTeamLogo(id: String?, isHome: Boolean){
             view.showLoading()
             doAsync {
                 val data = gson.fromJson(apiRepository

@@ -3,8 +3,10 @@ package com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.DetailMatchActivity
 import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.DetailMatchActivity.Companion.EXTRA_ID
@@ -28,6 +30,14 @@ class PreviousMatchAdapter(private val list: List<Matchs>) : RecyclerView.Adapte
         holder.homeScore.text = match.homeScore
         holder.awayScore.text = match.awayScore
         holder.dateMatch.text = match.dateMatch
+        Glide.with(holder.itemView)
+            .load(match.badgeHome)
+            .into(holder.homeLogo)
+
+        Glide.with(holder.itemView)
+            .load(match.badgeAway)
+            .into(holder.awayLogo)
+
         holder.itemView.setOnClickListener {
             it.context.startActivity<DetailMatchActivity>(EXTRA_ID to match.matchId)
         }
@@ -40,6 +50,8 @@ class PreviousMatchAdapter(private val list: List<Matchs>) : RecyclerView.Adapte
         val homeScore: TextView = itemView.findViewById(R.id.home_score)
         val awayScore: TextView = itemView.findViewById(R.id.away_score)
         val dateMatch: TextView = itemView.findViewById(R.id.date_match)
+        val homeLogo: ImageView = itemView.findViewById(R.id.home_logo)
+        val awayLogo: ImageView = itemView.findViewById(R.id.away_logo)
     }
 
 }

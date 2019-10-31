@@ -18,6 +18,12 @@ data class Matchs(
     @SerializedName("strAwayTeam")
     var teamAway: String? = null,
 
+    @SerializedName("idHomeTeam")
+    var homeId: String? = null,
+
+    @SerializedName("idAwayTeam")
+    var awayId: String? = null,
+
     @SerializedName("intHomeScore")
     var homeScore: String? = null,
 
@@ -25,5 +31,9 @@ data class Matchs(
     var awayScore: String? = null,
 
     @SerializedName("dateEvent")
-    var dateMatch: String? = null
+    var dateMatch: String? = null,
+
+    var badgeHome: String? = null,
+
+    var badgeAway: String? = null
 ):Parcelable

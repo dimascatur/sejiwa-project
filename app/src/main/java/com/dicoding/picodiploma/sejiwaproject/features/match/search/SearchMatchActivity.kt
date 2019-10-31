@@ -11,8 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.features.match.searchMatch.model.SearchMatch
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_search_match.*
 
 class SearchMatchActivity : AppCompatActivity(),
     SearchMatchView {
@@ -38,11 +41,11 @@ class SearchMatchActivity : AppCompatActivity(),
 
 
     override fun showLoading() {
-
+        progress_bar.visible()
     }
 
     override fun hideLoading() {
-
+        progress_bar.invisible()
     }
 
     override fun showSearchList(data: List<SearchMatch>) {
