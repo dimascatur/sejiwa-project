@@ -61,7 +61,7 @@ class LeagueListActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.search_match -> {
+            R.id.search -> {
                 val moveIntent = Intent(this@LeagueListActivity, SearchMatchActivity::class.java)
                 startActivity(moveIntent)
             }

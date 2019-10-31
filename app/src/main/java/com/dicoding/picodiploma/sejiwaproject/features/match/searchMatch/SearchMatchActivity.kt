@@ -75,6 +75,9 @@ class SearchMatchActivity : AppCompatActivity(),
             }
 
         })
+
+        val searchMenuItem = menu.findItem(R.id.search_match)
+        searchMenuItem.expandActionView()
         return true
     }
 }
