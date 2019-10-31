@@ -9,7 +9,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".detailMatch.DetailMatchActivity">
+    tools:context=".features.match.detailMatch.DetailMatchActivity">
 
     <ImageView
         android:id="@+id/stadium"
