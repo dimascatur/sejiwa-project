@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.previous
 
 import android.os.Bundle
 import android.util.Log
@@ -15,7 +15,7 @@ import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.page.PageViewModel
-import com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch.model.Matchs
+import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Matchs
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_next_match.*
 

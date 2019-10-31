@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.previous
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.DetailMatchActivity
-import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.DetailMatchActivity.Companion.EXTRA_ID
-import com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch.model.Matchs
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity.Companion.EXTRA_ID
+import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Matchs
 import org.jetbrains.anko.startActivity
 
 

@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.nextMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.next
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.DetailMatchActivity
-import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.DetailMatchActivity.Companion.EXTRA_ID
-import com.dicoding.picodiploma.sejiwaproject.features.match.nextMatch.model.NextMatch
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity.Companion.EXTRA_ID
+import com.dicoding.picodiploma.sejiwaproject.features.match.next.model.NextMatch
 import org.jetbrains.anko.startActivity
 
 

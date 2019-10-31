@@ -1,6 +1,6 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.searchMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.search
 
-import com.dicoding.picodiploma.sejiwaproject.features.match.searchMatch.model.SearchMatch
+import com.dicoding.picodiploma.sejiwaproject.features.match.search.model.SearchMatch
 
 interface SearchMatchView {
     fun showLoading()

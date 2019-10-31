@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch.model
+package com.dicoding.picodiploma.sejiwaproject.features.match.previous.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

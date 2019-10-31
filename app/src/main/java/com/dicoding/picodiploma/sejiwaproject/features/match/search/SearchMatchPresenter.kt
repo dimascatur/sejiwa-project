@@ -1,8 +1,8 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.searchMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.search
 
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.api.TheSportDBApi
-import com.dicoding.picodiploma.sejiwaproject.features.match.searchMatch.model.SearchMatchResponse
+import com.dicoding.picodiploma.sejiwaproject.features.match.search.model.SearchMatchResponse
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

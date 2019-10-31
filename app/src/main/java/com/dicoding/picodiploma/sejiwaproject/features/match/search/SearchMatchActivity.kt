@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.searchMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.search
 
 import android.app.SearchManager
 import android.content.Context
@@ -13,7 +13,7 @@ import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
-import com.dicoding.picodiploma.sejiwaproject.features.match.searchMatch.model.SearchMatch
+import com.dicoding.picodiploma.sejiwaproject.features.match.search.model.SearchMatch
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_search_match.*
 

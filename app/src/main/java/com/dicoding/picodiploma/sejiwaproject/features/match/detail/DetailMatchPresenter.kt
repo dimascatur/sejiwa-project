@@ -1,9 +1,9 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.detail
 
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.api.TheSportDBApi
-import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.model.DetailMatchResponse
-import com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.model.LogoTeamResponse
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatchResponse
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.LogoTeamResponse
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

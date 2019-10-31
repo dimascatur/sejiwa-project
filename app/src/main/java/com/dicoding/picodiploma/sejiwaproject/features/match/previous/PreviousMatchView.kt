@@ -1,6 +1,6 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.previous
 
-import com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch.model.Matchs
+import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Matchs
 
 interface PreviousMatchView{
     fun showLoading()

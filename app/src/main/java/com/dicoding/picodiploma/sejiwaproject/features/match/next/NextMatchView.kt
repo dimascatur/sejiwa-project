@@ -1,6 +1,6 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.nextMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.next
 
-import com.dicoding.picodiploma.sejiwaproject.features.match.nextMatch.model.NextMatch
+import com.dicoding.picodiploma.sejiwaproject.features.match.next.model.NextMatch
 
 interface NextMatchView{
     fun showLoading()

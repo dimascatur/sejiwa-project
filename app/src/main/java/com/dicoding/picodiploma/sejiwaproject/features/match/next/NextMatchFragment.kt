@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.nextMatch
+package com.dicoding.picodiploma.sejiwaproject.features.match.next
 
 
 import android.os.Bundle
@@ -15,7 +15,7 @@ import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.page.PageViewModel
-import com.dicoding.picodiploma.sejiwaproject.features.match.nextMatch.model.NextMatch
+import com.dicoding.picodiploma.sejiwaproject.features.match.next.model.NextMatch
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_next_match.*
 

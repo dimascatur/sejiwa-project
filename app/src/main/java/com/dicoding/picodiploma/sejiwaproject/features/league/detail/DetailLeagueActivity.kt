@@ -7,8 +7,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.page.SectionsPagerAdapter
-import com.dicoding.picodiploma.sejiwaproject.features.match.nextMatch.NextMatchFragment
-import com.dicoding.picodiploma.sejiwaproject.features.match.previousMatch.PreviousMatchFragment
+import com.dicoding.picodiploma.sejiwaproject.features.match.next.NextMatchFragment
+import com.dicoding.picodiploma.sejiwaproject.features.match.previous.PreviousMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.League
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
@@ -40,11 +40,19 @@ class DetailLeagueActivity : AppCompatActivity(),
                 supportFragmentManager
             )
 
-        sectionsPagerAdapter.populateFragment(PreviousMatchFragment.newInstance(nameLeague?: "4328"), "Previous Match")
-        sectionsPagerAdapter.populateFragment(NextMatchFragment.newInstance(nameLeague?: "4328"), "Next Match")
+        sectionsPagerAdapter.populateFragment(
+            PreviousMatchFragment.newInstance(
+                nameLeague ?: "4328"
+            ), "Previous Match"
+        )
+        sectionsPagerAdapter.populateFragment(
+            NextMatchFragment.newInstance(nameLeague ?: "4328"),
+            "Next Match"
+        )
         view_pager_detail.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager_detail)
 
+        supportActionBar?.title = "Detail League"
     }
 
     companion object {
@@ -61,7 +69,7 @@ class DetailLeagueActivity : AppCompatActivity(),
     }
 
     override fun showDetailList(data: List<League>) {
-        if (data[0].teamName.isNullOrEmpty()){
+        if (data[0].teamName.isNullOrEmpty()) {
             name_league.invisible()
             league_loc.invisible()
             league_formed.invisible()

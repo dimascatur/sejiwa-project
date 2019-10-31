@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.detailMatch.model
+package com.dicoding.picodiploma.sejiwaproject.features.match.detail.model
 
 import com.google.gson.annotations.SerializedName
 
