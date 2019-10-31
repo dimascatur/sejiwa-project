@@ -8,6 +8,29 @@
     android:padding="16dp">
 
 
+    <ImageView
+        android:id="@+id/home_logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/english" />
+
+    <ImageView
+        android:id="@+id/away_logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/germany" />
+
     <TextView
         android:id="@+id/dummy_match"
         android:layout_width="wrap_content"
@@ -36,25 +59,27 @@
         android:id="@+id/team_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/team_title"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView" />
+        app:layout_constraintEnd_toStartOf="@+id/date_match"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo"
+        app:layout_constraintVertical_bias="0.64" />
 
     <TextView
         android:id="@+id/team_away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="24dp"
         android:text="@string/team_title"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/date_match"
+        app:layout_constraintTop_toBottomOf="@+id/away_logo"
+        app:layout_constraintVertical_bias="0.058" />
 
     <TextView
         android:id="@+id/date_match"
