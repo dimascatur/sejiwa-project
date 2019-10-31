@@ -8,8 +8,8 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".features.match.detailMatch.DetailMatchActivity">
+    android:layout_height="wrap_content"
+    tools:context=".features.match.detail.DetailMatchActivity">
 
     <ImageView
         android:id="@+id/stadium"
@@ -98,8 +98,8 @@
         android:id="@+id/team_home"
         android:layout_width="74dp"
         android:layout_height="22dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
         android:gravity="end"
         android:text="@string/team_title"
         android:textColor="@android:color/black"
@@ -111,9 +111,10 @@
         android:layout_width="74dp"
         android:layout_height="22dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="50dp"
         android:text="@string/team_title"
         android:textColor="@android:color/black"
+        android:gravity="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/away_logo" />
 
