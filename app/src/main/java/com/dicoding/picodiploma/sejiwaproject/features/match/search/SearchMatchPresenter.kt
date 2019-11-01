@@ -20,9 +20,13 @@ class SearchMatchPresenter (private val view: SearchMatchView,
                 SearchMatchResponse::class.java
             )
 
+            val result = data.event?.filter {
+                it.sportType == "Soccer"
+            }
+
             uiThread {
                 view.hideLoading()
-                view.showSearchList(data.event ?: listOf())
+                view.showSearchList(result?: listOf())
             }
         }
     }
