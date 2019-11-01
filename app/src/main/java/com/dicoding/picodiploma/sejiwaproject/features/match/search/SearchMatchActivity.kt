@@ -36,7 +36,6 @@ class SearchMatchActivity : AppCompatActivity(),
                 request,
                 gson
             )
-
         progress_bar.invisible()
     }
 
