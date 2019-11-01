@@ -11,14 +11,12 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         tools:src="@drawable/english" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/league_logo"
-        android:layout_toRightOf="@id/league_logo"
         android:orientation="vertical">
         <TextView
             android:id="@+id/name_league"
