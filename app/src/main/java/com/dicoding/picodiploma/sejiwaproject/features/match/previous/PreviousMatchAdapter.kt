@@ -10,11 +10,11 @@ import com.bumptech.glide.Glide
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity.Companion.EXTRA_ID
-import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Matchs
+import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.PreviousMatch
 import org.jetbrains.anko.startActivity
 
 
-class PreviousMatchAdapter(private val list: List<Matchs>) : RecyclerView.Adapter<PreviousMatchAdapter.MatchViewHolder>() {
+class PreviousMatchAdapter(private val list: List<PreviousMatch>) : RecyclerView.Adapter<PreviousMatchAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_previous_match, parent, false)
         return MatchViewHolder(view)

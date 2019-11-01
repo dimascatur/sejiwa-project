@@ -12,7 +12,7 @@ import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
-import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Matchs
+import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.PreviousMatch
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_next_match.*
 
@@ -77,7 +77,7 @@ class PreviousMatchFragment : Fragment(),
         progress_bar.invisible()
     }
 
-    override fun showPreviousMatch(data: List<Matchs>) {
+    override fun showPreviousMatch(data: List<PreviousMatch>) {
         Log.d("size", "" + data.size)
         rvMatch.layoutManager = LinearLayoutManager(context)
         val listLeagueAdapter =
