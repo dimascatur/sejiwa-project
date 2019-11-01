@@ -9,6 +9,9 @@ data class SearchMatch(
     @SerializedName("dateEvent")
     var dateMatch: String? = null,
 
+    @SerializedName("strSport")
+    var sportType: String? = null,
+
     @SerializedName("strHomeTeam")
     var teamHome: String? = null,
 
