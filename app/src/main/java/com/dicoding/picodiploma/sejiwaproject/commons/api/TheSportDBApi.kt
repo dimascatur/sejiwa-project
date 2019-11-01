@@ -74,6 +74,5 @@ object TheSportDBApi {
             .appendQueryParameter("e", event)
             .build()
             .toString()
-
     }
 }
