@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.league.detail.page
+package com.dicoding.picodiploma.sejiwaproject.features.league.detail
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class DetailPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     private val fragmentList = arrayListOf<Fragment>()
     private val fragmentTitle = arrayListOf<String>()

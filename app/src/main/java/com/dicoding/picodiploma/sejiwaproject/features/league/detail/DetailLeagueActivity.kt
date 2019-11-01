@@ -6,7 +6,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
-import com.dicoding.picodiploma.sejiwaproject.features.league.detail.page.SectionsPagerAdapter
 import com.dicoding.picodiploma.sejiwaproject.features.match.next.NextMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.PreviousMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.League
@@ -36,7 +35,7 @@ class DetailLeagueActivity : AppCompatActivity(),
         presenter.getDetailList(nameLeague)
 
         val sectionsPagerAdapter =
-            SectionsPagerAdapter(
+            DetailPagerAdapter(
                 supportFragmentManager
             )
 
