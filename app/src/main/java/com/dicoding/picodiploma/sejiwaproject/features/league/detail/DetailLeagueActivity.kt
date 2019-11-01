@@ -6,11 +6,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
+import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.League
 import com.dicoding.picodiploma.sejiwaproject.features.match.next.NextMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.PreviousMatchFragment
-import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.League
-import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
-import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_detail.*
 
@@ -59,12 +58,9 @@ class DetailLeagueActivity : AppCompatActivity(),
     }
 
     override fun showLoading() {
-        progress_bar.visible()
     }
 
     override fun hideLoading() {
-        progress_bar.invisible()
-
     }
 
     override fun showDetailList(data: List<League>) {
