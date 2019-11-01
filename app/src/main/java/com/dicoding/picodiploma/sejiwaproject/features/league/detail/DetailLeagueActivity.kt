@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.sejiwaproject.features.league.detail
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -11,7 +12,16 @@ import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.Leagu
 import com.dicoding.picodiploma.sejiwaproject.features.match.next.NextMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.PreviousMatchFragment
 import com.google.gson.Gson
+import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_detail.league_badge
+import kotlinx.android.synthetic.main.activity_detail.league_formed
+import kotlinx.android.synthetic.main.activity_detail.league_loc
+import kotlinx.android.synthetic.main.activity_detail.league_logo
+import kotlinx.android.synthetic.main.activity_detail.name_league
+import kotlinx.android.synthetic.main.activity_detail.tabs
+import kotlinx.android.synthetic.main.activity_detail.view_pager_detail
+
 
 class DetailLeagueActivity : AppCompatActivity(),
     DetailView {
@@ -50,7 +60,10 @@ class DetailLeagueActivity : AppCompatActivity(),
         view_pager_detail.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager_detail)
 
-        supportActionBar?.title = "Detail League"
+        detail_toolbar.title = "Detail League"
+
+        collapsing.setExpandedTitleColor(Color.TRANSPARENT)
+        collapsing.setCollapsedTitleTextColor(Color.WHITE)
     }
 
     companion object {
@@ -78,6 +91,7 @@ class DetailLeagueActivity : AppCompatActivity(),
             Glide.with(this)
                 .load(data[0].teamPoster)
                 .apply(RequestOptions().override(550, 550))
+                .apply(RequestOptions.bitmapTransform(BlurTransformation(20, 3)))
                 .into(league_badge)
 
             Glide.with(this)
