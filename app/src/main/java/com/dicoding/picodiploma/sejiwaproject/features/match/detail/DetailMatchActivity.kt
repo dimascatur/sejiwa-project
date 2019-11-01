@@ -85,14 +85,12 @@ class DetailMatchActivity : AppCompatActivity(),
     override fun showHomeLogo(data: List<LogoTeam>) {
         Glide.with(this)
             .load(data[0].teamLogo)
-            .apply(RequestOptions().override(80, 80))
             .into(home_logo)
     }
 
     override fun showAwayLogo(data: List<LogoTeam>) {
         Glide.with(this)
             .load(data[0].teamLogo)
-            .apply(RequestOptions().override(80, 80))
             .into(away_logo)
     }
 
