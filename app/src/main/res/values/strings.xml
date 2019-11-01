@@ -1,15 +1,30 @@
 <resources>
-    <string name="app_name">SejiwaProject</string>
+    <string name="app_name">TheSportDB</string>
+    <string name="name_league">English Premier League</string>
+    <string name="league_location">England</string>
+    <string name="desc">The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL)</string>
+    <string name="location">Location</string>
+    <string name="formed_year">Since</string>
+    <string name="dummy_year">1980</string>
 
-    <string-array name="leagueNames">
+    <array name="league">
         <item>English Premier League</item>
         <item>French Ligue 1</item>
-        <item>BundesLiga</item>
+        <item>German Bundesliga</item>
         <item>Italian Serie A</item>
         <item>Portuguese Primeira Liga</item>
         <item>Scottish Premier League</item>
-        <item>La Liga</item>
-        <item>American Major League</item>
+        <item>Spanish La Liga</item>
+    </array>
+
+    <string-array name="leagueID">
+        <item>4328</item>
+        <item>4334</item>
+        <item>4331</item>
+        <item>4332</item>
+        <item>4344</item>
+        <item>4330</item>
+        <item>4335</item>
     </string-array>
 
     <string-array name="leagueDescription">
@@ -20,7 +35,6 @@
         <item>The Primeira Liga (First League; Portuguese pronunciation: ), formerly called Primeira Divisão), is the top professional association football division of the Portuguese football league system.</item>
         <item>The Scottish Premiership is the top division of the Scottish Professional Football League, the league competition for professional football clubs in Scotland. The Scottish Premiership was established in July 2013, after the Scottish Professional Football League was formed by a merger of the Scottish Premier League and Scottish Football League.</item>
         <item>The Primera División, commonly known as La Liga and as La Liga Santander for sponsorship reasons, is the top professional association football division of the Spanish football league system.</item>
-        <item>Major League Soccer (MLS) is a professional soccer league representing the sport\'s highest level in both the United States and Canada. MLS constitutes one of the major professional sports leagues of the United States and Canada. The league is composed of 20 teams—17 in the U.S. and 3 in Canada.</item>
     </string-array>
 
     <string-array name="leagueLocation">
@@ -31,7 +45,6 @@
         <item>Portugal</item>
         <item>Scotland</item>
         <item>Spanyol</item>
-        <item>USA</item>
     </string-array>
 
     <array name="leagueLogo">
@@ -42,7 +55,21 @@
         <item>@drawable/portugal</item>
         <item>@drawable/scotland</item>
         <item>@drawable/spanyol</item>
-        <item>@drawable/usa</item>
     </array>
 
+    <string name="match_title">Match</string>
+    <string name="dummy">:</string>
+    <string name="score">0</string>
+    <string name="team_title">nama team</string>
+    <string name="goal">Goal</string>
+    <string name="dummy_score">-</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="red_card">Red Card</string>
+    <string name="dummy_max_score">10</string>
+    <string name="vs">VS</string>
+    <string name="next_match">Next Match</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search Match</string>
+    <string name="dummy_date">2019-10-30</string>
+    <string name="logo">logo</string>
 </resources>

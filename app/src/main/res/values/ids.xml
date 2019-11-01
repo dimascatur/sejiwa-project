@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="name_league" type="id"/>
-    <item name="league_desc" type="id"/>
-    <item name="league_loc" type="id"/>
-    <item name="league_logo" type="id"/>
-    <item name="rv_league" type="id"/>
-</resources>
-
