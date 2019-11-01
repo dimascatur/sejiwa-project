@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_detail_match.*
 class DetailMatchActivity : AppCompatActivity(),
     DetailMatchView {
 
-    private var matchs: MutableList<DetailMatch> = mutableListOf()
+    private var matches: MutableList<DetailMatch> = mutableListOf()
     private lateinit var presenter: DetailMatchPresenter
 
 
@@ -76,8 +76,8 @@ class DetailMatchActivity : AppCompatActivity(),
         team_home.text = data[0].teamHome
         team_away.text = data[0].teamAway
 
-        matchs.clear()
-        matchs.addAll(data)
+        matches.clear()
+        matches.addAll(data)
         presenter.getTeamLogo(data[0].homeId, true)
         presenter.getTeamLogo(data[0].awayId, false)
 
