@@ -25,22 +25,13 @@ import kotlinx.android.synthetic.main.fragment_next_match.*
 class PreviousMatchFragment : Fragment(),
     PreviousMatchView {
     private lateinit var rvMatch: RecyclerView
-    private lateinit var pageViewModel: PageViewModel
     private lateinit var presenter: PreviousMatchPresenter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        pageViewModel = ViewModelProviders.of(this).get(PageViewModel::class.java).apply {
-            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        val root = inflater.inflate(R.layout.fragment_previous_match, container, false)
-        pageViewModel.text.observe(this, Observer<String> {})
-        return root
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_previous_match, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,10 +51,9 @@ class PreviousMatchFragment : Fragment(),
             )
         presenter.getPreviousMatch(id ?: "4328")
 
-
     }
-    companion object {
 
+    companion object {
 
         private const val ARG_SECTION_NUMBER = "section_number"
         private const val ID_LEAGUE = "id"
@@ -73,13 +63,13 @@ class PreviousMatchFragment : Fragment(),
          * number.
          */
         @JvmStatic
-        fun newInstance( idLeague: String): PreviousMatchFragment {
+        fun newInstance(idLeague: String): PreviousMatchFragment {
             return PreviousMatchFragment()
                 .apply {
-                arguments = Bundle().apply {
-                    putString(ID_LEAGUE, idLeague)
+                    arguments = Bundle().apply {
+                        putString(ID_LEAGUE, idLeague)
+                    }
                 }
-            }
         }
     }
 
@@ -92,7 +82,7 @@ class PreviousMatchFragment : Fragment(),
     }
 
     override fun showPreviousMatch(data: List<Matchs>) {
-        Log.d("size","" + data.size )
+        Log.d("size", "" + data.size)
         rvMatch.layoutManager = LinearLayoutManager(context)
         val listLeagueAdapter =
             PreviousMatchAdapter(
