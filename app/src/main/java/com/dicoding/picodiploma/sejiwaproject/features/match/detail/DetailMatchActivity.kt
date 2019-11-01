@@ -36,7 +36,6 @@ class DetailMatchActivity : AppCompatActivity(),
             )
         presenter.getDetailMatch(matchDetail)
 
-
     }
 
     companion object {
