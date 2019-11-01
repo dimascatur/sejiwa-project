@@ -16,7 +16,7 @@ class SearchMatchPresenter (private val view: SearchMatchView,
         doAsync {
             val data = gson.fromJson(
                 apiRepository
-                    .doRequest(TheSportDBApi.getSearchMatch(id)),
+                    .doRequest(TheSportDBApi.getSearchMatches(id)),
                 SearchMatchResponse::class.java
             )
 
