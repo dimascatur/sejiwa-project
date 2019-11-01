@@ -78,7 +78,6 @@ class PreviousMatchFragment : Fragment(),
     }
 
     override fun showPreviousMatch(data: List<PreviousMatch>) {
-        Log.d("size", "" + data.size)
         rvMatch.layoutManager = LinearLayoutManager(context)
         val listLeagueAdapter =
             PreviousMatchAdapter(
