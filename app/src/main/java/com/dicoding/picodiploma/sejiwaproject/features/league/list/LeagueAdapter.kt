@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.DetailLeagueActivity
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.DetailLeagueActivity.Companion.EXTRA_KEY

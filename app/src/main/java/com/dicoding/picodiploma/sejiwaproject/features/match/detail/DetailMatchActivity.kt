@@ -3,13 +3,12 @@ package com.dicoding.picodiploma.sejiwaproject.features.match.detail
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
-import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatch
-import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.LogoTeam
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatch
+import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.LogoTeam
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_detail_match.*
 
