@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
-import com.dicoding.picodiploma.sejiwaproject.features.league.detail.page.PageViewModel
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Matchs
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_next_match.*
@@ -55,7 +52,6 @@ class PreviousMatchFragment : Fragment(),
 
     companion object {
 
-        private const val ARG_SECTION_NUMBER = "section_number"
         private const val ID_LEAGUE = "id"
 
         /**
