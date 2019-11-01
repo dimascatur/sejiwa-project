@@ -10,8 +10,8 @@ import androidx.fragment.app.FragmentPagerAdapter
  */
 class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
-    val fragmentList = arrayListOf<Fragment>()
-    val fragmentTitle = arrayListOf<String>()
+    private val fragmentList = arrayListOf<Fragment>()
+    private val fragmentTitle = arrayListOf<String>()
 
     fun populateFragment(fragment: Fragment, title: String) {
         fragmentList.add(fragment)
