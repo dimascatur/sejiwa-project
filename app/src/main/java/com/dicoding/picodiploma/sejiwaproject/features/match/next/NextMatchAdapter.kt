@@ -42,7 +42,6 @@ class NextMatchAdapter(private val list: List<NextMatch>) :
         }
     }
 
-
     inner class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val homeTeam: TextView = itemView.findViewById(R.id.team_home)
         val awayTeam: TextView = itemView.findViewById(R.id.team_away)
