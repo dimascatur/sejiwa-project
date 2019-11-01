@@ -27,9 +27,7 @@ class LeagueAdapter(private val list: ArrayList<League>) :
         val leagues = list[position]
 
         Glide.with(holder.itemView.context)
-            .load(leagues.photo)
-            .apply(RequestOptions().override(80, 80))
-            .into(holder.imgLogo)
+            .load(leagues.photo).into(holder.imgLogo)
 
         holder.txtName.text = leagues.name
         holder.txtDesc.text = leagues.description
