@@ -37,6 +37,7 @@ class SearchMatchActivity : AppCompatActivity(),
                 gson
             )
 
+        progress_bar.invisible()
     }
 
 
@@ -68,12 +69,12 @@ class SearchMatchActivity : AppCompatActivity(),
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextSubmit(query: String): Boolean {
-                Toast.makeText(this@SearchMatchActivity, query, Toast.LENGTH_SHORT).show()
+                if (query.isNotEmpty())
+                    presenter.getSearchMatch(query)
                 return true
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                presenter.getSearchMatch(newText)
                 return true
             }
 
