@@ -11,13 +11,16 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
+        android:contentDescription="@string/logo"
         tools:src="@drawable/english" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/league_logo"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/name_league"
             android:layout_width="match_parent"
@@ -33,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             tools:text="@string/league_location" />
+
         <TextView
             android:id="@+id/league_desc"
             android:layout_width="match_parent"
@@ -40,5 +44,6 @@
             android:ellipsize="end"
             android:maxLines="2"
             tools:text="@string/desc" />
+
     </LinearLayout>
 </RelativeLayout>
