@@ -14,7 +14,7 @@ import com.dicoding.picodiploma.sejiwaproject.features.match.next.model.NextMatc
 import org.jetbrains.anko.startActivity
 
 
-class NextMatchAdapter(private val list: List<NextMatch>) :
+class NextMatchAdapter(private val list: MutableList<NextMatch>) :
     RecyclerView.Adapter<NextMatchAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_next_match, parent, false)
@@ -23,6 +23,10 @@ class NextMatchAdapter(private val list: List<NextMatch>) :
 
     override fun getItemCount(): Int = list.size
 
+    fun addNextMatch(nextMatch: NextMatch) {
+        list.add(nextMatch)
+        notifyItemInserted(list.size -1)
+    }
     override fun onBindViewHolder(holder: MatchViewHolder, position: Int) {
         val match = list[position]
         holder.homeTeam.text = match.teamHome
