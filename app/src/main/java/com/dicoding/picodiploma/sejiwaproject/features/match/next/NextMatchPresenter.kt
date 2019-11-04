@@ -21,7 +21,7 @@ class NextMatchPresenter (
                 NextMatchResponse::class.java
             )
 
-            val nextEvent = data.events.map {
+            data.events.map {
                 val homeResponse = gson.fromJson(
                     apiRepository
                         .doRequest(TheSportDBApi.getTeamDetail(it.homeId)),
@@ -38,11 +38,9 @@ class NextMatchPresenter (
                 result.badgeHome = homeResponse.teams.first().teamLogo
                 result.badgeAway = awayResponse.teams.first().teamLogo
 
-                result
-            }
-            uiThread {
-                view.hideLoading()
-                view.showNextMatch(nextEvent)
+                uiThread {
+                    view.matchReady(result)
+                }
             }
         }
     }
