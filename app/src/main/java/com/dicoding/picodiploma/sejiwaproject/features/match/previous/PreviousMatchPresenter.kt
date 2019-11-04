@@ -11,7 +11,8 @@ import org.jetbrains.anko.uiThread
 class PreviousMatchPresenter(
     private val view: PreviousMatchView,
     private val apiRepository: ApiRepository,
-    private val gson: Gson) {
+    private val gson: Gson
+) {
     fun getPreviousMatch(id: String) {
         view.showLoading()
         doAsync {
@@ -21,7 +22,7 @@ class PreviousMatchPresenter(
                 PreviousMatchResponse::class.java
             )
 
-            val previousEvent = data.events.map {
+            data.events.map {
                 val homeResponse = gson.fromJson(
                     apiRepository
                         .doRequest(TheSportDBApi.getTeamDetail(it.homeId)),
@@ -38,11 +39,9 @@ class PreviousMatchPresenter(
                 result.badgeHome = homeResponse.teams.first().teamLogo
                 result.badgeAway = awayResponse.teams.first().teamLogo
 
-                result
-            }
-            uiThread {
-                view.hideLoading()
-                view.showPreviousMatch(previousEvent)
+                uiThread {
+                    view.matchReady(result)
+                }
             }
         }
     }
