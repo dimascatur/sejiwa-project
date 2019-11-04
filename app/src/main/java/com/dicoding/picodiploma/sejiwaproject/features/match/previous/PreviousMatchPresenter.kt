@@ -36,6 +36,8 @@ class PreviousMatchPresenter(
                 )
 
                 val result = it.copy()
+                result.awayId = awayResponse.teams.first().idTeam
+                result.homeId = homeResponse.teams.first().idTeam
                 result.badgeHome = homeResponse.teams.first().teamLogo
                 result.badgeAway = awayResponse.teams.first().teamLogo
 
