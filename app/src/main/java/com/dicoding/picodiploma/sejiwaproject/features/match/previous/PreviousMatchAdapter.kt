@@ -14,13 +14,19 @@ import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Prev
 import org.jetbrains.anko.startActivity
 
 
-class PreviousMatchAdapter(private val list: List<PreviousMatch>) : RecyclerView.Adapter<PreviousMatchAdapter.MatchViewHolder>() {
+class PreviousMatchAdapter(private val list: MutableList<PreviousMatch>) : RecyclerView.Adapter<PreviousMatchAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_previous_match, parent, false)
         return MatchViewHolder(view)
     }
 
     override fun getItemCount(): Int = list.size
+
+    fun addPreviousMatch(previousMatch: PreviousMatch){
+        list.add(previousMatch)
+        notifyItemInserted(list.size - 1)
+
+    }
 
     override fun onBindViewHolder(holder: MatchViewHolder, position: Int) {
         val match = list[position]
