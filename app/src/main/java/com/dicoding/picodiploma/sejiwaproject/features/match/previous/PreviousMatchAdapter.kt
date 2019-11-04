@@ -25,7 +25,6 @@ class PreviousMatchAdapter(private val list: MutableList<PreviousMatch>) : Recyc
     fun addPreviousMatch(previousMatch: PreviousMatch){
         list.add(previousMatch)
         notifyItemInserted(list.size - 1)
-
     }
 
     override fun onBindViewHolder(holder: MatchViewHolder, position: Int) {
