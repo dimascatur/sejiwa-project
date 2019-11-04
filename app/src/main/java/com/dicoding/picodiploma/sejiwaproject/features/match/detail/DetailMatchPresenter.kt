@@ -3,7 +3,7 @@ package com.dicoding.picodiploma.sejiwaproject.features.match.detail
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.api.TheSportDBApi
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatchResponse
-import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.LogoTeamResponse
+import com.dicoding.picodiploma.sejiwaproject.features.team.model.TeamResponse
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -29,7 +29,7 @@ class DetailMatchPresenter (private val view: DetailMatchView,
             doAsync {
                 val data = gson.fromJson(apiRepository
                     .doRequest(TheSportDBApi.getTeamDetail(id)),
-                    LogoTeamResponse::class.java
+                    TeamResponse::class.java
                 )
                 uiThread {
                     if (isHome){
