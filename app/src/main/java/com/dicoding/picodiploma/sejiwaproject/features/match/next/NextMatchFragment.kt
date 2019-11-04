@@ -24,7 +24,6 @@ class NextMatchFragment : Fragment(),
     private lateinit var rvMatch: RecyclerView
     private lateinit var presenter: NextMatchPresenter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,8 +33,13 @@ class NextMatchFragment : Fragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val listNextAdapter = NextMatchAdapter(mutableListOf())
+
         rvMatch = view.findViewById(R.id.rv_next_match)
         rvMatch.setHasFixedSize(true)
+        rvMatch.layoutManager = LinearLayoutManager(context)
+        rvMatch.adapter = listNextAdapter
 
         val id = arguments?.getString(ID_LEAGUE)
 
@@ -48,7 +52,6 @@ class NextMatchFragment : Fragment(),
                 gson
             )
         presenter.getNextMatch(id ?: "4328")
-
 
     }
 
@@ -67,8 +70,6 @@ class NextMatchFragment : Fragment(),
         }
     }
 
-
-
     override fun showLoading() {
         progress_bar.visible()
     }
@@ -77,11 +78,9 @@ class NextMatchFragment : Fragment(),
         progress_bar.invisible()
     }
 
-    override fun showNextMatch(data: List<NextMatch>) {
-        rvMatch.layoutManager = LinearLayoutManager(context)
-        val listLeagueAdapter =
-            NextMatchAdapter(data)
-        rvMatch.adapter = listLeagueAdapter
+    override fun matchReady(nextMatch: NextMatch) {
+        progress_bar.invisible()
+        (rvMatch.adapter as NextMatchAdapter).addNextMatch(nextMatch)
     }
 }
 
