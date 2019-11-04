@@ -2,7 +2,7 @@ package com.dicoding.picodiploma.sejiwaproject.features.match.previous
 
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.api.TheSportDBApi
-import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.LogoTeamResponse
+import com.dicoding.picodiploma.sejiwaproject.features.team.model.TeamResponse
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.PreviousMatchResponse
 import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
@@ -26,13 +26,13 @@ class PreviousMatchPresenter(
                 val homeResponse = gson.fromJson(
                     apiRepository
                         .doRequest(TheSportDBApi.getTeamDetail(it.homeId)),
-                    LogoTeamResponse::class.java
+                    TeamResponse::class.java
                 )
 
                 val awayResponse = gson.fromJson(
                     apiRepository
                         .doRequest(TheSportDBApi.getTeamDetail(it.awayId)),
-                    LogoTeamResponse::class.java
+                    TeamResponse::class.java
                 )
 
                 val result = it.copy()
