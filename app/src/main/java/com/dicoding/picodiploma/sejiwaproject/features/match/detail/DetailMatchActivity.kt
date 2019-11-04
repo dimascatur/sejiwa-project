@@ -59,6 +59,7 @@ class DetailMatchActivity : AppCompatActivity(),
             away_red.invisible()
             home_yellow.invisible()
             away_yellow.invisible()
+            date_match.invisible()
 
         } else {
             home_score.text = data[0].homeScore
@@ -69,6 +70,7 @@ class DetailMatchActivity : AppCompatActivity(),
             away_red.text = data[0].awayRedCard
             home_yellow.text = data[0].homeYellowCard
             away_yellow.text = data[0].awayYellowCard
+            date_match.text = data[0].dateMatch
         }
         match_title.text = data[0].matchTitle
         team_home.text = data[0].teamHome
