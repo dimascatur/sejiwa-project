@@ -32,8 +32,13 @@ class PreviousMatchFragment : Fragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val listPreviousAdapter = PreviousMatchAdapter(mutableListOf())
+
         rvMatch = view.findViewById(R.id.rv_previous_match)
         rvMatch.setHasFixedSize(true)
+        rvMatch.layoutManager = LinearLayoutManager(context)
+        rvMatch.adapter = listPreviousAdapter
 
         val id = arguments?.getString(ID_LEAGUE)
 
@@ -76,12 +81,9 @@ class PreviousMatchFragment : Fragment(),
         progress_bar.invisible()
     }
 
-    override fun showPreviousMatch(data: List<PreviousMatch>) {
-        rvMatch.layoutManager = LinearLayoutManager(context)
-        val listLeagueAdapter =
-            PreviousMatchAdapter(
-                data
-            )
-        rvMatch.adapter = listLeagueAdapter
+    override fun matchReady(previousMatch: PreviousMatch) {
+        progress_bar.invisible()
+        (rvMatch.adapter as PreviousMatchAdapter).addPreviousMatch(previousMatch)
     }
+
 }
