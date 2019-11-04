@@ -36,7 +36,6 @@ class LeagueListActivity : AppCompatActivity() {
     private fun initData() {
         val id = resources.getStringArray(R.array.leagueID)
         val name = resources.getStringArray(R.array.league)
-        val description = resources.getStringArray(R.array.leagueDescription)
         val location = resources.getStringArray(R.array.leagueLocation)
         val logo = resources.obtainTypedArray(R.array.leagueLogo)
 
@@ -45,7 +44,6 @@ class LeagueListActivity : AppCompatActivity() {
                 League(
                     id[i],
                     name[i],
-                    description[i],
                     location[i],
                     logo.getResourceId(i, 0)
                 )
