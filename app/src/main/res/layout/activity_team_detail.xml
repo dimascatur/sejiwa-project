@@ -41,15 +41,15 @@
 
                 <ImageView
                     android:id="@+id/team_logo"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:contentDescription="@string/logo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.725"
+                    app:layout_constraintVertical_bias="0.665"
                     tools:src="@drawable/english" />
 
                 <TextView
@@ -102,7 +102,7 @@
             android:orientation="vertical">
 
             <androidx.viewpager.widget.ViewPager
-                android:id="@+id/view_pager_detail"
+                android:id="@+id/view_pager_team"
                 android:layout_width="match_parent"
                 android:layout_height="700dp" />
 
