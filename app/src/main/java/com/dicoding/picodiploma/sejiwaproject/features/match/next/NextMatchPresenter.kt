@@ -9,11 +9,16 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 class NextMatchPresenter (
-    private val view: NextMatchView,
+    private var view: NextMatchView?,
     private val apiRepository: ApiRepository,
     private val gson: Gson) {
+
+    fun onDetach(){
+        view = null
+    }
+
     fun getNextMatch(id: String) {
-        view.showLoading()
+        view?.showLoading()
         doAsync {
             val data = gson.fromJson(
                 apiRepository
@@ -41,7 +46,8 @@ class NextMatchPresenter (
                 result.badgeAway = awayResponse.teams.first().teamLogo
 
                 uiThread {
-                    view.matchReady(result)
+                    view?.hideLoading()
+                    view?.matchReady(result)
                 }
             }
         }

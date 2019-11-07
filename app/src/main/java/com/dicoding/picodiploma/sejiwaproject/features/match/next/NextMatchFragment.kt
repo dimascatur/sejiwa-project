@@ -71,16 +71,21 @@ class NextMatchFragment : Fragment(),
     }
 
     override fun showLoading() {
-        progress_bar.visible()
+        progress_bar_next.visible()
     }
 
     override fun hideLoading() {
-        progress_bar.invisible()
+        progress_bar_next.invisible()
     }
 
     override fun matchReady(nextMatch: NextMatch) {
-        progress_bar.invisible()
+        progress_bar_next.invisible()
         (rvMatch.adapter as NextMatchAdapter).addNextMatch(nextMatch)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDetach()
     }
 }
 
