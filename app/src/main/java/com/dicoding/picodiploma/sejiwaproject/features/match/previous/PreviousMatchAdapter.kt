@@ -11,7 +11,7 @@ import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity.Companion.EXTRA_ID
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.PreviousMatch
-import com.dicoding.picodiploma.sejiwaproject.features.team.DetailTeamActivity
+import com.dicoding.picodiploma.sejiwaproject.features.team.TeamActivity
 import org.jetbrains.anko.startActivity
 
 
@@ -40,14 +40,14 @@ class PreviousMatchAdapter(private val list: MutableList<PreviousMatch>) : Recyc
             .load(match.badgeHome)
             .into(holder.homeLogo)
         holder.homeLogo.setOnClickListener {
-            it.context.startActivity<DetailTeamActivity>(DetailTeamActivity.EXTRA_TEAM to match.homeId)
+            it.context.startActivity<TeamActivity>(TeamActivity.EXTRA_TEAM to match.homeId)
         }
 
         Glide.with(holder.itemView)
             .load(match.badgeAway)
             .into(holder.awayLogo)
         holder.awayLogo.setOnClickListener {
-            it.context.startActivity<DetailTeamActivity>(DetailTeamActivity.EXTRA_TEAM to match.awayId)
+            it.context.startActivity<TeamActivity>(TeamActivity.EXTRA_TEAM to match.awayId)
         }
 
         holder.itemView.setOnClickListener {
