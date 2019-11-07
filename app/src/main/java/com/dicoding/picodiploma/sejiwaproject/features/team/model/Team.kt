@@ -13,5 +13,17 @@ data class Team(
     var teamStadium: String? = null,
 
     @SerializedName("strTeamBadge")
-    var teamLogo: String? = null
+    var teamLogo: String? = null,
+
+    @SerializedName("intFormedYear")
+    var teamFormed: String? = null,
+
+    @SerializedName("strDescriptionEN")
+    var teamDescription: String? = null,
+
+    @SerializedName("strTeamLogo")
+    var teamBadge: String? = null,
+
+    @SerializedName("strTeamJersey")
+    var teamJersey: String? = null
 )
