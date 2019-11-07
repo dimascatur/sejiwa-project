@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.sejiwaproject.features.team
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
@@ -7,14 +8,15 @@ import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
+import com.dicoding.picodiploma.sejiwaproject.features.player.GridPlayerFragment
+import com.dicoding.picodiploma.sejiwaproject.features.team.detail.TeamFragment
 import com.dicoding.picodiploma.sejiwaproject.features.team.model.Team
 import com.google.gson.Gson
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_team_detail.*
 
-class DetailTeamActivity : AppCompatActivity(), DetailTeamView {
-    private var teams: MutableList<Team> = mutableListOf()
-    private lateinit var presenter: DetailTeamPresenter
+class TeamActivity : AppCompatActivity(), TeamView {
+    private lateinit var presenter: TeamPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,22 +26,44 @@ class DetailTeamActivity : AppCompatActivity(), DetailTeamView {
 
         val request = ApiRepository()
         val gson = Gson()
-        presenter = DetailTeamPresenter(
+        presenter = TeamPresenter(
             this,
             request,
             gson
         )
         presenter.getDetailTeam(teamId)
 
-//        val sectionsPagerAdapter =
-//            DetailTeamAdapter(
-//                supportFragmentManager
-//            )
-//        sectionsPagerAdapter.populateFragment()
+        val sectionsPagerAdapter =
+            TeamPagerAdapter(
+                supportFragmentManager
+            )
+        sectionsPagerAdapter.populateFragment(
+            TeamFragment.newInstance(
+                teamId ?: "133608"
+            ), "About Team"
+        )
+        sectionsPagerAdapter.populateFragment(
+            GridPlayerFragment.newInstance(
+                teamId ?: "133690"
+            ), "Player"
+        )
+        view_pager_team.adapter = sectionsPagerAdapter
+        tabs.setupWithViewPager(view_pager_team)
+
+        detail_toolbar.title = "Detail Team"
+
+        collapsing.setExpandedTitleColor(Color.TRANSPARENT)
+        collapsing.setCollapsedTitleTextColor(Color.WHITE)
     }
 
     companion object {
         const val EXTRA_TEAM = "extra_team"
+    }
+
+    override fun showLoading() {
+    }
+
+    override fun hideLoading() {
     }
 
     override fun showDetailTeam(data: Team) {
