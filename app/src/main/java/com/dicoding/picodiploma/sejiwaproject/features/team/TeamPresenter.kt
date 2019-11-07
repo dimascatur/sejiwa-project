@@ -7,9 +7,9 @@ import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class DetailTeamPresenter(private val view: DetailTeamView,
-                          private val apiRepository: ApiRepository,
-                          private val gson: Gson) {
+class TeamPresenter(private val view: TeamView,
+                    private val apiRepository: ApiRepository,
+                    private val gson: Gson) {
 
     fun getDetailTeam(id: String?){
         doAsync {
