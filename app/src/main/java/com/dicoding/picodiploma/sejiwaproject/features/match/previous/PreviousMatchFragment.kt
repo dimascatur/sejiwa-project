@@ -13,7 +13,7 @@ import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.PreviousMatch
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_next_match.*
+import kotlinx.android.synthetic.main.fragment_previous_match.*
 
 /**
  * A placeholder fragment containing a simple view.
@@ -86,4 +86,8 @@ class PreviousMatchFragment : Fragment(),
         (rvMatch.adapter as PreviousMatchAdapter).addPreviousMatch(previousMatch)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDetach()
+    }
 }
