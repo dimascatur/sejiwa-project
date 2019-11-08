@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.favorite.next
+package com.dicoding.picodiploma.sejiwaproject.features.favorite
 
 
 import android.os.Bundle
@@ -76,8 +76,8 @@ class Fragment : Fragment() {
         private const val ID_LEAGUE = "id"
 
         @JvmStatic
-        fun newInstance( matchId: String): com.dicoding.picodiploma.sejiwaproject.features.favorite.next.Fragment {
-            return com.dicoding.picodiploma.sejiwaproject.features.favorite.next.Fragment()
+        fun newInstance( matchId: String): com.dicoding.picodiploma.sejiwaproject.features.favorite.Fragment {
+            return com.dicoding.picodiploma.sejiwaproject.features.favorite.Fragment()
                 .apply {
                     arguments = Bundle().apply {
                         putString(ID_LEAGUE, matchId)
