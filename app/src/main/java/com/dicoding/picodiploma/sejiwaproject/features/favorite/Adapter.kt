@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.favorite.next
+package com.dicoding.picodiploma.sejiwaproject.features.favorite
 
 import android.view.LayoutInflater
 import android.view.View
