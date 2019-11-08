@@ -2,7 +2,6 @@
     <string name="app_name">TheSportDB</string>
     <string name="name_league">English Premier League</string>
     <string name="league_location">England</string>
-    <string name="desc">The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL)</string>
     <string name="location">Location</string>
     <string name="formed_year">Since</string>
     <string name="dummy_year">1980</string>
@@ -65,5 +64,7 @@
     <string name="name_team">Chelsea</string>
     <string name="text_desc">Description</string>
     <string name="dummy_desc"><![CDATA[Norwich City Football Club is an English professional football club based in Norwich, Norfolk. During the 2012–13 Premier League season, Norwich City finished eleventh, but were relegated back to the Championship at the end of the 2013–14 season, finishing in 18th place with 33 points, ahead of Fulham and Cardiff City.r r The club was founded in 1902 and first won promotion to the Football League First Division in 1972. Since then, Norwich have played a total of 23 seasons in the top flight, with a longest continuous spell of nine seasons. Norwich have won the League Cup twice, in 1962 and 1985, and the FA Youth Cup twice, in 1983 and 2013. They were founder members of the Premier League in 1992–93, finishing third in the inaugural season and played in its first three seasons, reaching the UEFA Cup 3rd round. Norwich had most recently returned to the Premier League in 2011 after a six-year absence.r r Since 1935, Norwich have played their home games at Carrow Road and have a long-standing and fierce rivalry with East Anglian neighbours Ipswich Town, with whom they have contested the East Anglian derby 138 times. From the most recent results of this rivalry, Norwich are the current holders of the />  title. The fans\' song On the Ball, City is regarded as being one of the oldest football songs in the world.]]></string>
+    <string name="favorite_match">Favorite Match</string>
+    <string name="match">Match</string>
 
 </resources>
