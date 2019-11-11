@@ -22,7 +22,7 @@ class FavoriteActivity : AppCompatActivity() {
             )
 
         sectionsPagerAdapter.populateFragment(
-            Fragment.newInstance(
+            MatchFragment.newInstance(
                 teamMatch ?: "68890"
             ), "Match"
         )
