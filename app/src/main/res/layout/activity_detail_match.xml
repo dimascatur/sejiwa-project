@@ -101,23 +101,24 @@
             android:id="@+id/team_home"
             android:layout_width="74dp"
             android:layout_height="22dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="12dp"
-            android:gravity="end"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
             android:text="@string/team_title"
             android:textColor="@android:color/black"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/home_logo"
+            app:layout_constraintStart_toStartOf="@+id/home_logo"
             app:layout_constraintTop_toBottomOf="@+id/home_logo" />
 
         <TextView
             android:id="@+id/team_away"
             android:layout_width="74dp"
             android:layout_height="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginTop="8dp"
             android:text="@string/team_title"
             android:textColor="@android:color/black"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/away_logo"
+            app:layout_constraintStart_toStartOf="@+id/away_logo"
             app:layout_constraintTop_toBottomOf="@+id/away_logo" />
 
         <TextView
