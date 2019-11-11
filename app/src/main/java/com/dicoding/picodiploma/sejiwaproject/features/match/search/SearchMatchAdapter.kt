@@ -11,10 +11,15 @@ import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchA
 import com.dicoding.picodiploma.sejiwaproject.features.match.search.model.SearchMatch
 import org.jetbrains.anko.startActivity
 
-class SearchMatchAdapter(private val list: List<SearchMatch>) : RecyclerView.Adapter<SearchMatchAdapter.MatchViewHolder>() {
+class SearchMatchAdapter(private var list: MutableList<SearchMatch>) : RecyclerView.Adapter<SearchMatchAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_search_match, parent, false)
         return MatchViewHolder(view)    }
+
+    fun addMatch(listMatch: List<SearchMatch>) {
+        list.addAll(listMatch)
+        notifyDataSetChanged()
+    }
 
     override fun getItemCount(): Int = list.size
 
