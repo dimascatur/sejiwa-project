@@ -8,44 +8,49 @@ import com.google.gson.Gson
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class DetailMatchPresenter (private var view: DetailMatchView?,
-                            private val apiRepository: ApiRepository,
-                            private val gson: Gson) {
+class DetailMatchPresenter(
+    private var view: DetailMatchView?,
+    private val apiRepository: ApiRepository,
+    private val gson: Gson
+) {
 
-    fun onDetach(){
+    fun onDetach() {
         view = null
     }
 
     fun getDetailMatch(id: String?) {
         view?.showLoading()
         doAsync {
-            val data = gson.fromJson(apiRepository
-                .doRequest(TheSportDBApi.getMatchDetails(id)),
+            val data = gson.fromJson(
+                apiRepository
+                    .doRequest(TheSportDBApi.getMatchDetails(id)),
                 DetailMatchResponse::class.java
             )
-            uiThread {
-                view?.hideLoading()
-                view?.showMatchDetail(data.events)
-            }
-        }
-    }
-    fun getTeamLogo(id: String?, isHome: Boolean){
-            view?.showLoading()
-            doAsync {
-                val data = gson.fromJson(apiRepository
-                    .doRequest(TheSportDBApi.getTeamDetail(id)),
+
+            data.events.map {
+                val homeResponse = gson.fromJson(
+                    apiRepository
+                        .doRequest(TheSportDBApi.getTeamDetail(it.homeId)),
                     TeamResponse::class.java
                 )
-                uiThread {
-                    if (isHome){
-                        view?.hideLoading()
-                        view?.showHomeLogo(data.teams)
-                    } else {
-                        view?.hideLoading()
-                        view?.showAwayLogo(data.teams)
-                    }
 
+                val awayResponse = gson.fromJson(
+                    apiRepository
+                        .doRequest(TheSportDBApi.getTeamDetail(it.awayId)),
+                    TeamResponse::class.java
+                )
+
+                val result = it.copy()
+                result.awayId = awayResponse.teams.first().idTeam
+                result.homeId = homeResponse.teams.first().idTeam
+                result.badgeHome = homeResponse.teams.first().teamLogo
+                result.badgeAway = awayResponse.teams.first().teamLogo
+
+                uiThread {
+                    view?.hideLoading()
+                    view?.matchReady(result)
                 }
             }
+        }
     }
 }
