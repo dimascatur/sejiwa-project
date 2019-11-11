@@ -6,5 +6,5 @@ interface DetailMatchView {
     fun showLoading()
     fun hideLoading()
     fun matchReady(detailMatch: DetailMatch)
-
+    fun favoriteState(isFavorite: Boolean)
 }
