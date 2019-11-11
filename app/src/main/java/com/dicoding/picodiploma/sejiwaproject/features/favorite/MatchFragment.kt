@@ -9,20 +9,22 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.db.Favorite
 import com.dicoding.picodiploma.sejiwaproject.db.database
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity.Companion.EXTRA_ID
+import kotlinx.android.synthetic.main.fragment_favorite_next.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.startActivity
 
 
-
 /**
  * A simple [Fragment] subclass.
  */
-class Fragment : Fragment() {
+class MatchFragment : Fragment() {
     private var favorites: MutableList<Favorite> = mutableListOf()
     private lateinit var adapter: FavoriteNextAdapter
     private lateinit var rvMatch: RecyclerView
@@ -52,8 +54,15 @@ class Fragment : Fragment() {
         context?.database?.use {
             val result = select(Favorite.TABLE_FAVORITE)
             val favorite = result.parseList(classParser<Favorite>())
-            favorites.addAll(favorite)
-            adapter.notifyDataSetChanged()
+            if (favorite.isEmpty()){
+                text_favorite.visible()
+                rvMatch.invisible()
+            } else {
+                text_favorite.invisible()
+                rvMatch.visible()
+                favorites.addAll(favorite)
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 
@@ -76,8 +85,8 @@ class Fragment : Fragment() {
         private const val ID_LEAGUE = "id"
 
         @JvmStatic
-        fun newInstance( matchId: String): com.dicoding.picodiploma.sejiwaproject.features.favorite.Fragment {
-            return com.dicoding.picodiploma.sejiwaproject.features.favorite.Fragment()
+        fun newInstance( matchId: String): MatchFragment {
+            return MatchFragment()
                 .apply {
                     arguments = Bundle().apply {
                         putString(ID_LEAGUE, matchId)
