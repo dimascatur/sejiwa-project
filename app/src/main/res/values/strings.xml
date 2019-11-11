@@ -67,5 +67,6 @@
     <string name="favorite_match">Favorite Match</string>
     <string name="match">Match</string>
     <string name="no_favorite">No Favorite Matches Saved</string>
+    <string name="match_not_found">Match Not Found</string>
 
 </resources>
