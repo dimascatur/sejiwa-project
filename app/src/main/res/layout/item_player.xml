@@ -13,7 +13,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:contentDescription="@string/dummy"
-        android:src="@drawable/playericon"
+        android:src="@drawable/ic_player_error"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
