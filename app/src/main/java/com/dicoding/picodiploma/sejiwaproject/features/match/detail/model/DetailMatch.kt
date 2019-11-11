@@ -46,5 +46,9 @@ data class DetailMatch(
     var awayYellowCard: String? = null,
 
     @SerializedName("dateEvent")
-    var dateMatch: String? = null
+    var dateMatch: String? = null,
+
+    var badgeHome: String? = null,
+
+    var badgeAway: String? = null
 )
