@@ -50,7 +50,7 @@ class GridPlayerFragment : Fragment(), PlayerView {
                 request,
                 gson
             )
-        presenter.getPlayerGrid(id ?: "133690")
+        presenter.getPlayerLogo(id ?: "133690")
     }
 
     companion object {
@@ -80,7 +80,7 @@ class GridPlayerFragment : Fragment(), PlayerView {
         progress_bar.invisible()
     }
 
-    override fun showPlayerGrid(data: List<Player>) {
+    override fun showPlayerDetail(data: List<Player>) {
         progress_bar.invisible()
         rvPlayer.adapter = PlayerAdapter(data)
     }
