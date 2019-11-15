@@ -5,6 +5,6 @@ import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.Prev
 interface PreviousMatchView{
     fun showLoading()
     fun hideLoading()
-    fun showPreviousMatch(data: List<PreviousMatch>)
+    fun matchReady(previousMatch: PreviousMatch)
 
 }

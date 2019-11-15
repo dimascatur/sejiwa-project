@@ -51,37 +51,34 @@
         android:text="@string/vs"
         android:textColor="@android:color/black"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/dummy_match"
+        app:layout_constraintStart_toStartOf="@+id/dummy_match"
         app:layout_constraintTop_toBottomOf="@+id/dummy_match"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.218" />
 
     <TextView
         android:id="@+id/team_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
         android:text="@string/team_title"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/date_match"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintEnd_toEndOf="@+id/home_logo"
+        app:layout_constraintStart_toStartOf="@+id/home_logo"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
 
     <TextView
         android:id="@+id/team_away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
         android:text="@string/team_title"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/date_match"
-        app:layout_constraintTop_toBottomOf="@+id/away_logo"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintEnd_toEndOf="@+id/away_logo"
+        app:layout_constraintStart_toStartOf="@+id/away_logo"
+        app:layout_constraintTop_toBottomOf="@+id/away_logo" />
 
     <TextView
         android:id="@+id/date_match"
@@ -91,8 +88,7 @@
         android:text="@string/dummy_date"
         android:textColor="@android:color/black"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

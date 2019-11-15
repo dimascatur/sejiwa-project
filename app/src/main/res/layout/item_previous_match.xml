@@ -25,13 +25,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="16dp"
             android:text="@string/dummy"
             android:textSize="40sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/match_title"
+            app:layout_constraintStart_toStartOf="@+id/match_title"
+            app:layout_constraintTop_toBottomOf="@+id/match_title" />
 
         <ImageView
             android:id="@+id/home_logo"
@@ -40,7 +39,6 @@
             android:layout_marginTop="48dp"
             android:contentDescription="@string/logo"
             app:layout_constraintEnd_toStartOf="@+id/home_score"
-            app:layout_constraintHorizontal_bias="0.702"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/english" />
@@ -49,11 +47,9 @@
             android:id="@+id/away_logo"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="48dp"
             android:contentDescription="@string/logo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.029"
             app:layout_constraintStart_toEndOf="@+id/away_score"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/germany" />
@@ -62,47 +58,45 @@
             android:id="@+id/home_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="12dp"
             android:text="@string/score"
             android:textSize="40sp"
             app:layout_constraintEnd_toStartOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/match_title" />
 
         <TextView
             android:id="@+id/away_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="16dp"
             android:text="@string/score"
             android:textSize="40sp"
             app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/match_title" />
 
         <TextView
             android:id="@+id/team_home"
-            android:layout_width="74dp"
-            android:layout_height="22dp"
-            android:text="@string/name_league"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/date_match"
-            app:layout_constraintHorizontal_bias="0.65"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_logo"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_team"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/home_logo"
+            app:layout_constraintStart_toStartOf="@+id/home_logo"
+            app:layout_constraintTop_toBottomOf="@+id/home_logo" />
 
         <TextView
             android:id="@+id/team_away"
-            android:layout_width="74dp"
-            android:layout_height="22dp"
-            android:text="@string/team_title"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.346"
-            app:layout_constraintStart_toEndOf="@+id/date_match"
-            app:layout_constraintTop_toBottomOf="@+id/away_logo"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_team"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/away_logo"
+            app:layout_constraintStart_toStartOf="@+id/away_logo"
+            app:layout_constraintTop_toBottomOf="@+id/away_logo" />
 
         <TextView
             android:id="@+id/date_match"

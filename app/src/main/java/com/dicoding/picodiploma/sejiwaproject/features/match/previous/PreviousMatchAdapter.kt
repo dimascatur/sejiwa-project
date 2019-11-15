@@ -11,16 +11,22 @@ import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity.Companion.EXTRA_ID
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.model.PreviousMatch
+import com.dicoding.picodiploma.sejiwaproject.features.team.TeamActivity
 import org.jetbrains.anko.startActivity
 
 
-class PreviousMatchAdapter(private val list: List<PreviousMatch>) : RecyclerView.Adapter<PreviousMatchAdapter.MatchViewHolder>() {
+class PreviousMatchAdapter(private val list: MutableList<PreviousMatch>) : RecyclerView.Adapter<PreviousMatchAdapter.MatchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_previous_match, parent, false)
         return MatchViewHolder(view)
     }
 
     override fun getItemCount(): Int = list.size
+
+    fun addPreviousMatch(previousMatch: PreviousMatch){
+        list.add(previousMatch)
+        notifyItemInserted(list.size - 1)
+    }
 
     override fun onBindViewHolder(holder: MatchViewHolder, position: Int) {
         val match = list[position]
@@ -33,10 +39,16 @@ class PreviousMatchAdapter(private val list: List<PreviousMatch>) : RecyclerView
         Glide.with(holder.itemView)
             .load(match.badgeHome)
             .into(holder.homeLogo)
+        holder.homeLogo.setOnClickListener {
+            it.context.startActivity<TeamActivity>(TeamActivity.EXTRA_TEAM to match.homeId)
+        }
 
         Glide.with(holder.itemView)
             .load(match.badgeAway)
             .into(holder.awayLogo)
+        holder.awayLogo.setOnClickListener {
+            it.context.startActivity<TeamActivity>(TeamActivity.EXTRA_TEAM to match.awayId)
+        }
 
         holder.itemView.setOnClickListener {
             it.context.startActivity<DetailMatchActivity>(EXTRA_ID to match.matchId)

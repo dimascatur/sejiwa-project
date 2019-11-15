@@ -11,7 +11,6 @@ class DetailPresenter (private val view: DetailView,
                        private val apiRepository: ApiRepository,
                        private val gson: Gson) {
     fun getDetailList(id: String?) {
-        view.showLoading()
         doAsync {
             val data = gson.fromJson(apiRepository
                 .doRequest(TheSportDBApi.getDetails(id)),
@@ -19,7 +18,6 @@ class DetailPresenter (private val view: DetailView,
             )
 
             uiThread {
-                view.hideLoading()
                 view.showDetailList(data.leagues)
             }
         }

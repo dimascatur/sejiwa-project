@@ -1,7 +1,10 @@
 package com.dicoding.picodiploma.sejiwaproject.features.league.detail
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -11,6 +14,7 @@ import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.League
 import com.dicoding.picodiploma.sejiwaproject.features.match.next.NextMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.PreviousMatchFragment
+import com.dicoding.picodiploma.sejiwaproject.features.match.search.SearchMatchActivity
 import com.google.gson.Gson
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -31,6 +35,8 @@ class DetailLeagueActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+
+        setSupportActionBar(detail_toolbar)
 
         val nameLeague = intent.getStringExtra(EXTRA_KEY)
 
@@ -70,12 +76,6 @@ class DetailLeagueActivity : AppCompatActivity(),
         const val EXTRA_KEY = "extra_key"
     }
 
-    override fun showLoading() {
-    }
-
-    override fun hideLoading() {
-    }
-
     override fun showDetailList(data: List<League>) {
         if (data[0].teamName.isNullOrEmpty()) {
             name_league.invisible()
@@ -103,5 +103,19 @@ class DetailLeagueActivity : AppCompatActivity(),
         leagues.clear()
         leagues.addAll(data)
 
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.options_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.search -> {
+                val moveIntent = Intent(this@DetailLeagueActivity, SearchMatchActivity::class.java)
+                startActivity(moveIntent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

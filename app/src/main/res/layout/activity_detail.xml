@@ -157,7 +157,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/view_pager_detail"
                 android:layout_width="match_parent"

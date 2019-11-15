@@ -37,13 +37,5 @@
             android:layout_marginBottom="8dp"
             tools:text="@string/league_location" />
 
-        <TextView
-            android:id="@+id/league_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="2"
-            tools:text="@string/desc" />
-
     </LinearLayout>
 </RelativeLayout>

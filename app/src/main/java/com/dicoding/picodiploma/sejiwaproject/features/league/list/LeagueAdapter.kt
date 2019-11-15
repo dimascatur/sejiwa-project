@@ -29,7 +29,6 @@ class LeagueAdapter(private val list: ArrayList<League>) :
             .load(leagues.photo).into(holder.imgLogo)
 
         holder.txtName.text = leagues.name
-        holder.txtDesc.text = leagues.description
         holder.txtLocation.text = leagues.location
         holder.itemView.setOnClickListener {
             it.context.startActivity<DetailLeagueActivity>(EXTRA_KEY to leagues.id)
@@ -40,7 +39,6 @@ class LeagueAdapter(private val list: ArrayList<League>) :
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgLogo: ImageView = itemView.findViewById(R.id.league_logo)
         val txtName: TextView = itemView.findViewById(R.id.name_league)
-        val txtDesc: TextView = itemView.findViewById(R.id.league_desc)
         val txtLocation: TextView = itemView.findViewById(R.id.league_loc)
 
 

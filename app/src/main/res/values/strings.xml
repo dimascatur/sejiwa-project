@@ -2,7 +2,6 @@
     <string name="app_name">TheSportDB</string>
     <string name="name_league">English Premier League</string>
     <string name="league_location">England</string>
-    <string name="desc">The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL)</string>
     <string name="location">Location</string>
     <string name="formed_year">Since</string>
     <string name="dummy_year">1980</string>
@@ -25,16 +24,6 @@
         <item>4344</item>
         <item>4330</item>
         <item>4335</item>
-    </string-array>
-
-    <string-array name="leagueDescription">
-        <item>The Premier League (often referred to as the English Premier League (EPL) outside England), is the top level of the English football league system. Contested by 20 clubs, it operates on a system of promotion and relegation with the English Football League (EFL).</item>
-        <item>Ligue 1 (French pronunciation: League 1, formerly known as Division 1), is the French professional league for association football clubs. It is the country\'s primary football competition and serves as the top division of the French football league system. Ligue 1 is one of two divisions making up the Ligue de Football Professionnel, the other being Ligue 2.</item>
-        <item>The Bundesliga, is a professional association football league in Germany and the football league with the highest average stadium attendance worldwide. At the top of the German football league system, the Bundesliga is Germany\'s primary football competition.</item>
-        <item>Serie A, also called Serie A TIM due to sponsorship by Telecom Italia, is a professional league competition for football clubs located at the top of the Italian football league system and has been operating for over eighty years since the 1929–30 season. It had been organized by Lega Calcio until 2010, but a new league, the Lega Serie A, was created for the 2010–11 season.</item>
-        <item>The Primeira Liga (First League; Portuguese pronunciation: ), formerly called Primeira Divisão), is the top professional association football division of the Portuguese football league system.</item>
-        <item>The Scottish Premiership is the top division of the Scottish Professional Football League, the league competition for professional football clubs in Scotland. The Scottish Premiership was established in July 2013, after the Scottish Professional Football League was formed by a merger of the Scottish Premier League and Scottish Football League.</item>
-        <item>The Primera División, commonly known as La Liga and as La Liga Santander for sponsorship reasons, is the top professional association football division of the Spanish football league system.</item>
     </string-array>
 
     <string-array name="leagueLocation">
@@ -60,7 +49,7 @@
     <string name="match_title">Match</string>
     <string name="dummy">:</string>
     <string name="score">0</string>
-    <string name="team_title">nama team</string>
+    <string name="team_title">Team Name</string>
     <string name="goal">Goal</string>
     <string name="dummy_score">-</string>
     <string name="yellow_card">Yellow Card</string>
@@ -70,6 +59,14 @@
     <string name="next_match">Next Match</string>
     <string name="search">Search</string>
     <string name="search_hint">Search Match</string>
-    <string name="dummy_date">2019-10-30</string>
+    <string name="dummy_date">2019/10/30</string>
     <string name="logo">logo</string>
+    <string name="name_team">Chelsea</string>
+    <string name="text_desc">Description</string>
+    <string name="dummy_desc"><![CDATA[Norwich City Football Club is an English professional football club based in Norwich, Norfolk. During the 2012–13 Premier League season, Norwich City finished eleventh, but were relegated back to the Championship at the end of the 2013–14 season, finishing in 18th place with 33 points, ahead of Fulham and Cardiff City.r r The club was founded in 1902 and first won promotion to the Football League First Division in 1972. Since then, Norwich have played a total of 23 seasons in the top flight, with a longest continuous spell of nine seasons. Norwich have won the League Cup twice, in 1962 and 1985, and the FA Youth Cup twice, in 1983 and 2013. They were founder members of the Premier League in 1992–93, finishing third in the inaugural season and played in its first three seasons, reaching the UEFA Cup 3rd round. Norwich had most recently returned to the Premier League in 2011 after a six-year absence.r r Since 1935, Norwich have played their home games at Carrow Road and have a long-standing and fierce rivalry with East Anglian neighbours Ipswich Town, with whom they have contested the East Anglian derby 138 times. From the most recent results of this rivalry, Norwich are the current holders of the />  title. The fans\' song On the Ball, City is regarded as being one of the oldest football songs in the world.]]></string>
+    <string name="favorite_match">Favorite Match</string>
+    <string name="match">Match</string>
+    <string name="no_favorite">No Favorite Matches Saved</string>
+    <string name="match_not_found">Match Not Found</string>
+
 </resources>

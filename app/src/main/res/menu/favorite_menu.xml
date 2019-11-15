@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:menuCategory="container">
+        <item android:id="@+id/favorite"
+            android:title="@string/favorite_match"
+            android:icon = "@drawable/ic_star_white"
+            android:shadowColor="#000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>

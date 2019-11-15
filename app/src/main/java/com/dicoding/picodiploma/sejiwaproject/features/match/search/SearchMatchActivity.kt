@@ -29,6 +29,13 @@ class SearchMatchActivity : AppCompatActivity(),
         rvMatch = findViewById(R.id.rv_search_match)
         rvMatch.setHasFixedSize(true)
 
+        rvMatch.layoutManager = LinearLayoutManager(this)
+        val listMatch =
+            SearchMatchAdapter(mutableListOf())
+
+        rvMatch.adapter = listMatch
+
+
         val request = ApiRepository()
         val gson = Gson()
         presenter =
@@ -42,6 +49,7 @@ class SearchMatchActivity : AppCompatActivity(),
 
 
     override fun showLoading() {
+        search_is_null.invisible()
         progress_bar.visible()
     }
 
@@ -50,13 +58,14 @@ class SearchMatchActivity : AppCompatActivity(),
     }
 
     override fun showSearchList(data: List<SearchMatch>) {
-        rvMatch.layoutManager = LinearLayoutManager(this)
-        val listMatch =
-            SearchMatchAdapter(
-                data
-            )
-        rvMatch.adapter = listMatch
-
+        if (data.isEmpty()){
+            search_is_null.visible()
+            rvMatch.invisible()
+        } else {
+            rvMatch.visible()
+            search_is_null.invisible()
+            (rvMatch.adapter as SearchMatchAdapter).addMatch(data)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

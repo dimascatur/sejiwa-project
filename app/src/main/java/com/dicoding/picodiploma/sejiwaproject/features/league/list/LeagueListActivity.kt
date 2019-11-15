@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.features.match.search.SearchMatchActivity
+import com.dicoding.picodiploma.sejiwaproject.features.favorite.MatchActivity
 
 class LeagueListActivity : AppCompatActivity() {
     private lateinit var rvLeague: RecyclerView
@@ -36,7 +36,6 @@ class LeagueListActivity : AppCompatActivity() {
     private fun initData() {
         val id = resources.getStringArray(R.array.leagueID)
         val name = resources.getStringArray(R.array.league)
-        val description = resources.getStringArray(R.array.leagueDescription)
         val location = resources.getStringArray(R.array.leagueLocation)
         val logo = resources.obtainTypedArray(R.array.leagueLogo)
 
@@ -45,7 +44,6 @@ class LeagueListActivity : AppCompatActivity() {
                 League(
                     id[i],
                     name[i],
-                    description[i],
                     location[i],
                     logo.getResourceId(i, 0)
                 )
@@ -55,14 +53,14 @@ class LeagueListActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.options_menu, menu)
+        menuInflater.inflate(R.menu.favorite_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.search -> {
-                val moveIntent = Intent(this@LeagueListActivity, SearchMatchActivity::class.java)
+            R.id.favorite -> {
+                val moveIntent = Intent(this@LeagueListActivity, MatchActivity::class.java)
                 startActivity(moveIntent)
             }
         }
