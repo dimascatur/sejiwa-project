@@ -68,5 +68,8 @@
     <string name="match">Match</string>
     <string name="no_favorite">No Favorite Matches Saved</string>
     <string name="match_not_found">Match Not Found</string>
+    <string name="dummy_position">Position</string>
+    <string name="dumy_born">Date Born</string>
+    <string name="nationality">Nationality</string>
 
 </resources>
