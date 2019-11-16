@@ -9,12 +9,12 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 class PlayerPresenter(
-    private val view: PlayerView,
+    private var view: PlayerView?,
     private val apiRepository: ApiRepository,
     private val gson: Gson
 ) {
     fun getPlayerLogo(idTeam: String) {
-        view.showLoading()
+        view?.showLoading()
         doAsync {
             val data = gson.fromJson(
                 apiRepository
@@ -22,8 +22,8 @@ class PlayerPresenter(
                 PlayerResponse::class.java
             )
             uiThread {
-                view.hideLoading()
-                view.showPlayerDetail(data.player)
+                view?.hideLoading()
+                view?.showPlayerDetail(data.player)
             }
         }
     }
@@ -36,9 +36,13 @@ class PlayerPresenter(
                 PlayerDetailResponse::class.java
             )
             uiThread {
-                view.hideLoading()
-                view.showPlayerDetail(data.players)
+                view?.hideLoading()
+                view?.showPlayerDetail(data.players)
             }
         }
+    }
+
+    fun onDetach() {
+        view = null
     }
 }
