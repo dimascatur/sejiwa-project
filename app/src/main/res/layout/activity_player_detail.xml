@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".features.player.PlayerDetailActivity">
+
+        <ImageView
+            android:id="@+id/player_background"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:contentDescription="@string/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_dummy_player" />
+
+        <ImageView
+            android:id="@+id/player_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="32dp"
+            android:contentDescription="@string/dummy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player_background"
+            tools:src="@drawable/ic_player_error" />
+
+        <TextView
+            android:id="@+id/player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player_background"
+            tools:text="Balotelli" />
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/dummy_position"
+            app:layout_constraintStart_toStartOf="@+id/player_name"
+            app:layout_constraintTop_toBottomOf="@+id/player_name" />
+
+        <TextView
+            android:id="@+id/dummy_born"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/position"
+            app:layout_constraintStart_toEndOf="@+id/position"
+            app:layout_constraintTop_toTopOf="@+id/position"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Forward" />
+
+        <TextView
+            android:id="@+id/dummy_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/dumy_born"
+            app:layout_constraintStart_toStartOf="@+id/position"
+            app:layout_constraintTop_toBottomOf="@+id/position" />
+
+        <TextView
+            android:id="@+id/player_born"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/dummy_date"
+            app:layout_constraintStart_toEndOf="@+id/dummy_date"
+            app:layout_constraintTop_toTopOf="@+id/dummy_date"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="1990-08-12" />
+
+        <TextView
+            android:id="@+id/dummy_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/location"
+            app:layout_constraintStart_toStartOf="@+id/dummy_date"
+            app:layout_constraintTop_toBottomOf="@+id/dummy_date" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/dummy_location"
+            app:layout_constraintStart_toEndOf="@+id/dummy_location"
+            app:layout_constraintTop_toTopOf="@+id/dummy_location"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Palermo" />
+
+        <TextView
+            android:id="@+id/dummy_nationality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/nationality"
+            app:layout_constraintStart_toStartOf="@+id/dummy_location"
+            app:layout_constraintTop_toBottomOf="@+id/dummy_location" />
+
+        <TextView
+            android:id="@+id/player_nationality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/dummy_nationality"
+            app:layout_constraintStart_toEndOf="@+id/dummy_nationality"
+            app:layout_constraintTop_toTopOf="@+id/dummy_nationality"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Italy" />
+
+        <TextView
+            android:id="@+id/dummy_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/text_desc"
+            app:layout_constraintStart_toStartOf="@+id/dummy_nationality"
+            app:layout_constraintTop_toBottomOf="@+id/dummy_nationality" />
+
+        <TextView
+            android:id="@+id/player_description"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@+id/dummy_desc"
+            app:layout_constraintTop_toBottomOf="@+id/dummy_desc"
+            tools:text="@string/dummy_desc" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="352dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/player_background" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

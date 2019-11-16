@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
+import com.dicoding.picodiploma.sejiwaproject.features.player.PlayerDetailActivity.Companion.ID_PLAYER
 import com.dicoding.picodiploma.sejiwaproject.features.player.model.Player
+import org.jetbrains.anko.startActivity
 
 class PlayerAdapter(private val grid: List<Player>) :
     RecyclerView.Adapter<PlayerAdapter.MatchViewHolder>() {
@@ -30,6 +32,10 @@ class PlayerAdapter(private val grid: List<Player>) :
             .load(player.playerImg)
             .apply(RequestOptions().error(R.drawable.ic_player_error))
             .into(holder.playerImg)
+
+        holder.itemView.setOnClickListener {
+            it.context.startActivity<PlayerDetailActivity>(ID_PLAYER to player.playerId)
+        }
     }
 
     inner class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
