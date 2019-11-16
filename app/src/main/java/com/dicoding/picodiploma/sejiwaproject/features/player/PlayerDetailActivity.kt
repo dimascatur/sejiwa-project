@@ -77,4 +77,9 @@ class PlayerDetailActivity : AppCompatActivity(),
         players.clear()
         players.addAll(data)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDetach()
+    }
 }
