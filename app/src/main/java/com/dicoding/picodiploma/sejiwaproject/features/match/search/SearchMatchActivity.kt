@@ -50,6 +50,7 @@ class SearchMatchActivity : AppCompatActivity(),
 
     override fun showLoading() {
         search_is_null.invisible()
+        rvMatch.invisible()
         progress_bar.visible()
     }
 
