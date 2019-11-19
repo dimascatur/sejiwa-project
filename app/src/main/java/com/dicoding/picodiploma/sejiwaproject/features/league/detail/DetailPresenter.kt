@@ -7,8 +7,6 @@ import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.Leagu
 import com.google.gson.Gson
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class DetailPresenter (private val view: DetailView,
                        private val apiRepository: ApiRepository,

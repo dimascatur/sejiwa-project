@@ -29,6 +29,7 @@ class PlayerPresenter(
     }
 
     fun getPlayerDetail(idPlayer: String) {
+        view?.showLoading()
         GlobalScope.launch(context.main) {
             val data = gson.fromJson(
                 apiRepository
