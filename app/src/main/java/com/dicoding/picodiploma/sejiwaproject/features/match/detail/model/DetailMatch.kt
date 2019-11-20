@@ -50,5 +50,8 @@ data class DetailMatch(
 
     var badgeHome: String? = null,
 
-    var badgeAway: String? = null
+    var badgeAway: String? = null,
+
+    var homeStadium: String? = null
+
 )
