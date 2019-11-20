@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.favorite
+package com.dicoding.picodiploma.sejiwaproject.features.favorite.match
 
 
 import android.os.Bundle
@@ -32,11 +32,12 @@ class MatchFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        adapter = FavoriteNextAdapter(
-            favorites
-        ) {
-            context?.startActivity<DetailMatchActivity>(EXTRA_ID to it.matchId)
-        }
+        adapter =
+            FavoriteNextAdapter(
+                favorites
+            ) {
+                context?.startActivity<DetailMatchActivity>(EXTRA_ID to it.matchId)
+            }
 
         rvMatch.setHasFixedSize(true)
         rvMatch.layoutManager = LinearLayoutManager(context)

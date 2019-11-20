@@ -4,10 +4,11 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.picodiploma.sejiwaproject.R
+import com.dicoding.picodiploma.sejiwaproject.features.favorite.match.MatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.DetailPagerAdapter
 import kotlinx.android.synthetic.main.activity_favorite.*
 
-class MatchActivity : AppCompatActivity() {
+class FavoriteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

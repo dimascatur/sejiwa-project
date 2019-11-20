@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.sejiwaproject.features.favorite
+package com.dicoding.picodiploma.sejiwaproject.features.favorite.match
 
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +15,9 @@ class FavoriteNextAdapter(private val favorite: List<Favorite>, private val list
     (Favorite) -> Unit): RecyclerView.Adapter<FavoriteViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_favorite, parent, false)
-        return FavoriteViewHolder(view)
+        return FavoriteViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int = favorite.size
