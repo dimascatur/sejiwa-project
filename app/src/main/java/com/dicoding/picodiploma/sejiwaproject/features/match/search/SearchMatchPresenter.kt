@@ -3,6 +3,7 @@ package com.dicoding.picodiploma.sejiwaproject.features.match.search
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.api.TheSportDBApi
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.CoroutineContextProvider
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.EspressoIdlingResource
 import com.dicoding.picodiploma.sejiwaproject.features.match.search.model.SearchMatchResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.GlobalScope
@@ -14,6 +15,7 @@ class SearchMatchPresenter (private val view: SearchMatchView,
 
     fun getSearchMatch(id: String?) {
         view.showLoading()
+        EspressoIdlingResource.increment()
         GlobalScope.launch(context.main) {
             val data = gson.fromJson(
                 apiRepository
@@ -25,6 +27,7 @@ class SearchMatchPresenter (private val view: SearchMatchView,
                 it.sportType == "Soccer"
             }
 
+            EspressoIdlingResource.decrement()
                 view.hideLoading()
                 view.showSearchList(result?: listOf())
             }
