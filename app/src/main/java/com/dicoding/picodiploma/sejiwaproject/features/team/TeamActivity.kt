@@ -11,6 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.db.database
 import com.dicoding.picodiploma.sejiwaproject.features.player.GridPlayerFragment
 import com.dicoding.picodiploma.sejiwaproject.features.team.detail.TeamFragment
@@ -63,6 +64,7 @@ class TeamActivity : AppCompatActivity(), TeamView {
         tabs.setupWithViewPager(view_pager_team)
 
         detail_toolbar.title = "Detail Team"
+        setSupportActionBar(detail_toolbar)
 
         collapsing.setExpandedTitleColor(Color.TRANSPARENT)
         collapsing.setCollapsedTitleTextColor(Color.WHITE)
@@ -70,12 +72,6 @@ class TeamActivity : AppCompatActivity(), TeamView {
 
     companion object {
         const val EXTRA_TEAM = "extra_team"
-    }
-
-    override fun showLoading() {
-    }
-
-    override fun hideLoading() {
     }
 
     override fun showDetailTeam(data: Team) {
