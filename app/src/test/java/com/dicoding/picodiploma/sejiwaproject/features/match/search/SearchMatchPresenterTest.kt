@@ -37,7 +37,7 @@ class SearchMatchPresenterTest{
     }
 
     @Test
-    fun `test get search match is ready`() {
+    fun `test get search match is success`() {
         val event: MutableList<SearchMatch> = mutableListOf()
         val response = SearchMatchResponse(event)
         val idEvent = "610504"
