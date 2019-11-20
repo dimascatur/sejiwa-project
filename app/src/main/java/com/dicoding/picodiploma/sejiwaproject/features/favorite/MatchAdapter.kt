@@ -40,6 +40,7 @@ class FavoriteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         Glide.with(badgeHome)
             .load(favorite.badgeHome)
             .into(badgeHome)
+
         Glide.with(badgeAway)
             .load(favorite.badgeAway)
             .into(badgeAway)
