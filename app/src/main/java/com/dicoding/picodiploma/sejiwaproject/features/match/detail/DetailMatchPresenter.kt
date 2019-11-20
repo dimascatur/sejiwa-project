@@ -4,6 +4,7 @@ import android.database.sqlite.SQLiteConstraintException
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.api.TheSportDBApi
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.CoroutineContextProvider
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.EspressoIdlingResource
 import com.dicoding.picodiploma.sejiwaproject.db.FavoriteMatch
 import com.dicoding.picodiploma.sejiwaproject.db.MyDatabaseOpenHelper
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatch
@@ -31,6 +32,7 @@ class DetailMatchPresenter(
 
     fun getDetailMatch(id: String?) {
         view?.showLoading()
+        EspressoIdlingResource.increment()
         GlobalScope.launch(context.main) {
             val data = gson.fromJson(
                 apiRepository
@@ -58,6 +60,7 @@ class DetailMatchPresenter(
                 result.badgeAway = awayResponse.teams.first().teamLogo
                 result.homeStadium = homeResponse.teams.first().teamStadium
 
+                EspressoIdlingResource.decrement()
                 view?.hideLoading()
                 view?.matchReady(result)
             }
