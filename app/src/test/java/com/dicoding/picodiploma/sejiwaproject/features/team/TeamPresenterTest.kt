@@ -1,6 +1,7 @@
 package com.dicoding.picodiploma.sejiwaproject.features.team
 
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
+import com.dicoding.picodiploma.sejiwaproject.db.MyDatabaseOpenHelper
 import com.dicoding.picodiploma.sejiwaproject.features.TestContextProvider
 import com.dicoding.picodiploma.sejiwaproject.features.team.model.Team
 import com.dicoding.picodiploma.sejiwaproject.features.team.model.TeamResponse
@@ -27,12 +28,16 @@ class TeamPresenterTest {
     @Mock
     private lateinit var apiResponse: Deferred<String>
 
+    @Mock
+    private lateinit var database: MyDatabaseOpenHelper
+
+
     private lateinit var presenter: TeamPresenter
 
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        presenter = TeamPresenter(view, apiRepository, gson, TestContextProvider())
+        presenter = TeamPresenter(view, apiRepository, gson, database, TestContextProvider())
     }
 
     @Test
