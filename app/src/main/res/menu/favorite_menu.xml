@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:menuCategory="container">
         <item android:id="@+id/favorite"
-            android:title="@string/favorite_match"
+            android:title="@string/favorite_title"
             android:icon = "@drawable/ic_star_white"
             android:shadowColor="#000"
             android:shadowDx="1"
