@@ -56,6 +56,7 @@ class DetailMatchPresenter(
                 result.homeId = homeResponse.teams.first().idTeam
                 result.badgeHome = homeResponse.teams.first().teamLogo
                 result.badgeAway = awayResponse.teams.first().teamLogo
+                result.homeStadium = homeResponse.teams.first().teamStadium
 
                 view?.hideLoading()
                 view?.matchReady(result)
