@@ -6,4 +6,5 @@ interface TeamView {
     fun showLoading()
     fun hideLoading()
     fun showDetailTeam(data: Team)
+    fun favoriteState(isFavorite: Boolean)
 }
