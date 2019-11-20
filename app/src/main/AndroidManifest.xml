@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".features.player.PlayerDetailActivity"></activity>
         <activity android:name=".features.favorite.FavoriteActivity" />
-        <activity android:name=".features.team.TeamActivity" />
+        <activity android:name=".features.team.TeamActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity
             android:name=".features.match.search.SearchMatchActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
