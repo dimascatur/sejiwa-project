@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.features.favorite.match.MatchFragment
+import com.dicoding.picodiploma.sejiwaproject.features.favorite.team.TeamFragment
 import com.dicoding.picodiploma.sejiwaproject.features.league.detail.DetailPagerAdapter
 import kotlinx.android.synthetic.main.activity_favorite.*
 
@@ -27,10 +28,18 @@ class FavoriteActivity : AppCompatActivity() {
                 teamMatch ?: "68890"
             ), "Match"
         )
+
+        sectionsPagerAdapter.populateFragment(
+            TeamFragment.newInstance(
+                teamMatch ?: "133604"
+            ), "Team"
+        )
+
+
         view_pager_favorite.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager_favorite)
 
-        favorite_toolbar.title = "Favorite Match"
+        favorite_toolbar.title = "Favorite"
 
         collapsing.setExpandedTitleColor(Color.TRANSPARENT)
         collapsing.setCollapsedTitleTextColor(Color.WHITE)
