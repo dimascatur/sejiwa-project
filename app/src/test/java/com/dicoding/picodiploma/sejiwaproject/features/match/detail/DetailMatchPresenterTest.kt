@@ -57,20 +57,15 @@ class DetailMatchPresenterTest {
         val matches: MutableList<DetailMatch> = mutableListOf(match)
         val response = DetailMatchResponse(matches)
 
-        val teamHome = Team(
+        val team = Team(
             idTeam = "133632",
             teamBadge = "https://www.thesportsdb.com/images/media/team/badge/a1af2i1557005128.png"
         )
 
-        val teamsHome: MutableList<Team> = mutableListOf(teamHome)
+        val teamsHome: MutableList<Team> = mutableListOf(team)
         val teamHomeResponse = TeamResponse(teamsHome)
 
-        val teamAway = Team(
-            idTeam = "133632",
-            teamBadge = "https://www.thesportsdb.com/images/media/team/badge/a1af2i1557005128.png"
-        )
-
-        val teamsAway: MutableList<Team> = mutableListOf(teamAway)
+        val teamsAway: MutableList<Team> = mutableListOf(team)
         val teamAwayResponse = TeamResponse(teamsAway)
 
         val idEvent = "441613"
