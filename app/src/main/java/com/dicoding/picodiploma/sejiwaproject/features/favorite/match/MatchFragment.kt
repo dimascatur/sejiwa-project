@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
-import com.dicoding.picodiploma.sejiwaproject.db.Favorite
+import com.dicoding.picodiploma.sejiwaproject.db.FavoriteMatch
 import com.dicoding.picodiploma.sejiwaproject.db.database
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.DetailMatchActivity.Companion.EXTRA_ID
@@ -25,7 +25,7 @@ import org.jetbrains.anko.startActivity
  * A simple [Fragment] subclass.
  */
 class MatchFragment : Fragment() {
-    private var favorites: MutableList<Favorite> = mutableListOf()
+    private var favorites: MutableList<FavoriteMatch> = mutableListOf()
     private lateinit var adapter: FavoriteNextAdapter
     private lateinit var rvMatch: RecyclerView
 
@@ -53,8 +53,8 @@ class MatchFragment : Fragment() {
     private fun showFavorite() {
         favorites.clear()
         context?.database?.use {
-            val result = select(Favorite.TABLE_FAVORITE)
-            val favorite = result.parseList(classParser<Favorite>())
+            val result = select(FavoriteMatch.TABLE_FAVORITE)
+            val favorite = result.parseList(classParser<FavoriteMatch>())
             if (favorite.isEmpty()){
                 text_favorite.visible()
                 rvMatch.invisible()

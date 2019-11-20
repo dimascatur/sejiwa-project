@@ -1,8 +1,8 @@
 package com.dicoding.picodiploma.sejiwaproject.db
 
-data class Favorite(val matchId: String?, val teamHome: String?,
-                    val teamAway: String?, val dateMatch: String?,
-                    val badgeHome: String?, val badgeAway: String?) {
+data class FavoriteMatch(val matchId: String?, val teamHome: String?,
+                         val teamAway: String?, val dateMatch: String?,
+                         val badgeHome: String?, val badgeAway: String?) {
 
     companion object{
         const val TABLE_FAVORITE: String = "TABLE_FAVORITE"

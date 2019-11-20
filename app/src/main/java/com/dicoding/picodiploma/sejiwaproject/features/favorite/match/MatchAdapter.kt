@@ -8,11 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.db.Favorite
+import com.dicoding.picodiploma.sejiwaproject.db.FavoriteMatch
 
 
-class FavoriteNextAdapter(private val favorite: List<Favorite>, private val listener:
-    (Favorite) -> Unit): RecyclerView.Adapter<FavoriteViewHolder>() {
+class FavoriteNextAdapter(private val favorite: List<FavoriteMatch>, private val listener:
+    (FavoriteMatch) -> Unit): RecyclerView.Adapter<FavoriteViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_favorite, parent, false)
         return FavoriteViewHolder(
@@ -35,7 +35,7 @@ class FavoriteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val badgeAway: ImageView = view.findViewById(R.id.away_logo)
 
 
-    fun bindItem(favorite: Favorite, listener: (Favorite) -> Unit) {
+    fun bindItem(favorite: FavoriteMatch, listener: (FavoriteMatch) -> Unit) {
         teamHome.text = favorite.teamHome
         teamAway.text = favorite.teamAway
         dateMatch.text = favorite.dateMatch
