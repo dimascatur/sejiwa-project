@@ -14,7 +14,7 @@ import com.dicoding.picodiploma.sejiwaproject.db.FavoriteMatch
 class FavoriteNextAdapter(private val favorite: List<FavoriteMatch>, private val listener:
     (FavoriteMatch) -> Unit): RecyclerView.Adapter<FavoriteViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_favorite, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_favorite_match, parent, false)
         return FavoriteViewHolder(
             view
         )
