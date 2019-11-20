@@ -25,7 +25,6 @@ class TeamPresenter(
 ) {
 
     fun getDetailTeam(id: String?) {
-        view.showLoading()
         GlobalScope.launch(context.main) {
             val data = gson.fromJson(
                 apiRepository
@@ -33,7 +32,6 @@ class TeamPresenter(
                 TeamResponse::class.java
             )
 
-            view.hideLoading()
             view.showDetailTeam(data.teams.first())
         }
     }
