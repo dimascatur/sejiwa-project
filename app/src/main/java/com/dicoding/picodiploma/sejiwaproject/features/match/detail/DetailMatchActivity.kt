@@ -83,7 +83,8 @@ class DetailMatchActivity : AppCompatActivity(),
                 teamAway = detailMatch.teamAway,
                 dateMatch = detailMatch.dateMatch,
                 badgeHome = detailMatch.badgeHome,
-                badgeAway = detailMatch.badgeAway
+                badgeAway = detailMatch.badgeAway,
+                homeStadium = detailMatch.homeStadium
             )
 
             home_score.text = detailMatch.homeScore
@@ -99,6 +100,10 @@ class DetailMatchActivity : AppCompatActivity(),
         match_title.text = detailMatch.matchTitle
         team_home.text = detailMatch.teamHome
         team_away.text = detailMatch.teamAway
+
+        Glide.with(this)
+            .load(detailMatch.homeStadium)
+            .into(home_stadium)
 
         Glide.with(this)
             .load(detailMatch.badgeHome)
