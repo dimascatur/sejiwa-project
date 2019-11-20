@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-class DetailPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class DetailPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private val fragmentList = arrayListOf<Fragment>()
     private val fragmentTitle = arrayListOf<String>()

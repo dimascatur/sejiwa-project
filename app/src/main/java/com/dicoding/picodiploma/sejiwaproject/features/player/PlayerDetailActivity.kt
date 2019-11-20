@@ -32,7 +32,7 @@ class PlayerDetailActivity : AppCompatActivity(),
             request,
             gson
         )
-        presenter.getPlayerDetail(playerDetail)
+        presenter.getPlayerDetail(playerDetail?: "34145937")
     }
 
     companion object {

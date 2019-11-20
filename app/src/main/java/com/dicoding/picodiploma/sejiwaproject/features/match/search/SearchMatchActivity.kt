@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.MenuItemCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
@@ -50,6 +49,7 @@ class SearchMatchActivity : AppCompatActivity(),
 
     override fun showLoading() {
         search_is_null.invisible()
+        rvMatch.invisible()
         progress_bar.visible()
     }
 
@@ -91,14 +91,13 @@ class SearchMatchActivity : AppCompatActivity(),
 
         val searchMenuItem = menu.findItem(R.id.search_match)
         searchMenuItem.expandActionView()
-        MenuItemCompat.setOnActionExpandListener(searchMenuItem, object : MenuItemCompat.OnActionExpandListener {
-            override fun onMenuItemActionExpand(item: MenuItem?): Boolean = true
+        searchMenuItem.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionExpand(item: MenuItem?) = true
 
             override fun onMenuItemActionCollapse(item: MenuItem?): Boolean {
                 onBackPressed()
                 return true
             }
-
         })
         return true
     }

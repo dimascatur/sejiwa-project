@@ -17,6 +17,7 @@ class SearchMatchAdapter(private var list: MutableList<SearchMatch>) : RecyclerV
         return MatchViewHolder(view)    }
 
     fun addMatch(listMatch: List<SearchMatch>) {
+        list.clear()
         list.addAll(listMatch)
         notifyDataSetChanged()
     }
