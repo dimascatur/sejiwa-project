@@ -83,8 +83,8 @@ class NextMatchFragment : Fragment(),
         (rvMatch.adapter as NextMatchAdapter).addNextMatch(nextMatch)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDetach() {
+        super.onDetach()
         presenter.onDetach()
     }
 }
