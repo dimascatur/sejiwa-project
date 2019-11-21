@@ -38,6 +38,7 @@ class DetailLeagueActivity : AppCompatActivity(),
         setContentView(R.layout.activity_detail)
 
         setSupportActionBar(detail_toolbar)
+        supportActionBar?.title = "Match"
 
         val nameLeague = intent.getStringExtra(EXTRA_KEY)
 
@@ -71,9 +72,8 @@ class DetailLeagueActivity : AppCompatActivity(),
         )
 
         view_pager_detail.adapter = sectionsPagerAdapter
+        view_pager_detail.offscreenPageLimit = 3
         tabs.setupWithViewPager(view_pager_detail)
-
-        detail_toolbar.title = "Detail League"
 
         collapsing.setExpandedTitleColor(Color.TRANSPARENT)
         collapsing.setCollapsedTitleTextColor(Color.WHITE)
