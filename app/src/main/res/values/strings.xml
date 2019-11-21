@@ -72,5 +72,12 @@
     <string name="dumy_born">Date Born</string>
     <string name="nationality">Nationality</string>
     <string name="no_favorite_team">No Favorite Teams Saved</string>
+    <string name="team_name">Team Name</string>
+    <string name="pl">PL</string>
+    <string name="g">G</string>
+    <string name="d">D</string>
+    <string name="l">L</string>
+    <string name="pt">Pt</string>
+    <string name="w">W</string>
 
 </resources>
