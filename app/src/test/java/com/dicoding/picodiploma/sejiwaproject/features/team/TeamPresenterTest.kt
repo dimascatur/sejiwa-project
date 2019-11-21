@@ -85,9 +85,7 @@ class TeamPresenterTest {
 
             presenter.getDetailTeam(idTeam)
 
-            Mockito.verify(view).showLoading()
             Mockito.verify(view).showDetailTeam(teams.first())
-            Mockito.verify(view).hideLoading()
         }
     }
 }
