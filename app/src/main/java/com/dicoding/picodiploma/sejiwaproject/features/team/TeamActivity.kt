@@ -1,17 +1,16 @@
 package com.dicoding.picodiploma.sejiwaproject.features.team
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
-import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.db.database
 import com.dicoding.picodiploma.sejiwaproject.features.player.GridPlayerFragment
 import com.dicoding.picodiploma.sejiwaproject.features.team.detail.TeamFragment
