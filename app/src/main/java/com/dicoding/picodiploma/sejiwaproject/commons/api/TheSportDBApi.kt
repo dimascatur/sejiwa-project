@@ -98,4 +98,17 @@ object TheSportDBApi {
             .append("id").append("=").append(idPlayer)
             .toString()
     }
+
+    fun getStandingsMatch(idLeague: String?): String {
+        return StringBuilder()
+            .append(BuildConfig.BASE_URL)
+            .append("api").append("/")
+            .append("v1").append("/")
+            .append("json").append("/")
+            .append(BuildConfig.TSDB_API_KEY).append("/")
+            .append("lookuptable.php").append("?")
+            .append("l").append("=").append(idLeague)
+            .toString()
+
+    }
 }

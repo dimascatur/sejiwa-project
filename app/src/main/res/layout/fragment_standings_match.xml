@@ -6,16 +6,16 @@
     android:layout_height="match_parent">
 
     <ProgressBar
-        android:id="@+id/progress_previous"
+        android:id="@+id/progress_standings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_previous_match"
+        android:id="@+id/rv_standings_match"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        tools:listitem="@layout/item_previous_match" />
+        tools:listitem="@layout/item_standings" />
 </RelativeLayout>

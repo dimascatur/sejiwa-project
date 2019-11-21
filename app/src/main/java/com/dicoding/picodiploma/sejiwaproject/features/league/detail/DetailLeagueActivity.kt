@@ -15,6 +15,7 @@ import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.Leagu
 import com.dicoding.picodiploma.sejiwaproject.features.match.next.NextMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.PreviousMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.search.SearchMatchActivity
+import com.dicoding.picodiploma.sejiwaproject.features.match.standings.StandingsMatchFragment
 import com.google.gson.Gson
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -57,12 +58,18 @@ class DetailLeagueActivity : AppCompatActivity(),
         sectionsPagerAdapter.populateFragment(
             PreviousMatchFragment.newInstance(
                 nameLeague ?: "4328"
-            ), "Previous Match"
+            ), "Previous"
         )
         sectionsPagerAdapter.populateFragment(
             NextMatchFragment.newInstance(nameLeague ?: "4328"),
-            "Next Match"
+            "Next"
         )
+
+        sectionsPagerAdapter.populateFragment(
+            StandingsMatchFragment.newInstance(nameLeague ?: "4328"),
+            "Standings"
+        )
+
         view_pager_detail.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager_detail)
 
