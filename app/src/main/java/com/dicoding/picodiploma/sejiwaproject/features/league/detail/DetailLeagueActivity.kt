@@ -15,6 +15,7 @@ import com.dicoding.picodiploma.sejiwaproject.features.league.detail.model.Leagu
 import com.dicoding.picodiploma.sejiwaproject.features.match.next.NextMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.previous.PreviousMatchFragment
 import com.dicoding.picodiploma.sejiwaproject.features.match.search.SearchMatchActivity
+import com.dicoding.picodiploma.sejiwaproject.features.match.standings.StandingsMatchFragment
 import com.google.gson.Gson
 import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_detail.*
@@ -37,6 +38,7 @@ class DetailLeagueActivity : AppCompatActivity(),
         setContentView(R.layout.activity_detail)
 
         setSupportActionBar(detail_toolbar)
+        supportActionBar?.title = "Match"
 
         val nameLeague = intent.getStringExtra(EXTRA_KEY)
 
@@ -57,16 +59,21 @@ class DetailLeagueActivity : AppCompatActivity(),
         sectionsPagerAdapter.populateFragment(
             PreviousMatchFragment.newInstance(
                 nameLeague ?: "4328"
-            ), "Previous Match"
+            ), "Previous"
         )
         sectionsPagerAdapter.populateFragment(
             NextMatchFragment.newInstance(nameLeague ?: "4328"),
-            "Next Match"
+            "Next"
         )
-        view_pager_detail.adapter = sectionsPagerAdapter
-        tabs.setupWithViewPager(view_pager_detail)
 
-        detail_toolbar.title = "Detail League"
+        sectionsPagerAdapter.populateFragment(
+            StandingsMatchFragment.newInstance(nameLeague ?: "4328"),
+            "Standings"
+        )
+
+        view_pager_detail.adapter = sectionsPagerAdapter
+        view_pager_detail.offscreenPageLimit = 3
+        tabs.setupWithViewPager(view_pager_detail)
 
         collapsing.setExpandedTitleColor(Color.TRANSPARENT)
         collapsing.setCollapsedTitleTextColor(Color.WHITE)

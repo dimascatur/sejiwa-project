@@ -4,7 +4,8 @@ import android.database.sqlite.SQLiteConstraintException
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.api.TheSportDBApi
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.CoroutineContextProvider
-import com.dicoding.picodiploma.sejiwaproject.db.Favorite
+import com.dicoding.picodiploma.sejiwaproject.commons.utils.EspressoIdlingResource
+import com.dicoding.picodiploma.sejiwaproject.db.FavoriteMatch
 import com.dicoding.picodiploma.sejiwaproject.db.MyDatabaseOpenHelper
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatch
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatchResponse
@@ -31,6 +32,7 @@ class DetailMatchPresenter(
 
     fun getDetailMatch(id: String?) {
         view?.showLoading()
+        EspressoIdlingResource.increment()
         GlobalScope.launch(context.main) {
             val data = gson.fromJson(
                 apiRepository
@@ -56,7 +58,9 @@ class DetailMatchPresenter(
                 result.homeId = homeResponse.teams.first().idTeam
                 result.badgeHome = homeResponse.teams.first().teamLogo
                 result.badgeAway = awayResponse.teams.first().teamLogo
+                result.homeStadium = homeResponse.teams.first().teamStadium
 
+                EspressoIdlingResource.decrement()
                 view?.hideLoading()
                 view?.matchReady(result)
             }
@@ -65,12 +69,12 @@ class DetailMatchPresenter(
 
     fun favoriteState(matchDetail: String) {
         database.use {
-            val result = select(Favorite.TABLE_FAVORITE)
+            val result = select(FavoriteMatch.TABLE_FAVORITE)
                 .whereArgs(
                     "(MATCH_ID = {id})",
                     "id" to matchDetail
                 )
-            val favorite = result.parseList(classParser<Favorite>())
+            val favorite = result.parseList(classParser<FavoriteMatch>())
             if (favorite.isNotEmpty()) view?.favoriteState(true)
         }
     }
@@ -79,13 +83,13 @@ class DetailMatchPresenter(
         try {
             database.use {
                 insert(
-                    Favorite.TABLE_FAVORITE,
-                    Favorite.MATCH_ID to match.matchId,
-                    Favorite.TEAM_HOME to match.teamHome,
-                    Favorite.TEAM_AWAY to match.teamAway,
-                    Favorite.DATE_MATCH to match.dateMatch,
-                    Favorite.BADGE_HOME to match.badgeHome,
-                    Favorite.BADGE_AWAY to match.badgeAway
+                    FavoriteMatch.TABLE_FAVORITE,
+                    FavoriteMatch.MATCH_ID to match.matchId,
+                    FavoriteMatch.TEAM_HOME to match.teamHome,
+                    FavoriteMatch.TEAM_AWAY to match.teamAway,
+                    FavoriteMatch.DATE_MATCH to match.dateMatch,
+                    FavoriteMatch.BADGE_HOME to match.badgeHome,
+                    FavoriteMatch.BADGE_AWAY to match.badgeAway
                 )
             }
         } catch (e: SQLiteConstraintException) {
@@ -97,7 +101,7 @@ class DetailMatchPresenter(
         try {
             database.use {
                 delete(
-                    Favorite.TABLE_FAVORITE, "(MATCH_ID = {id})",
+                    FavoriteMatch.TABLE_FAVORITE, "(MATCH_ID = {id})",
                     "id" to matchDetail
                 )
             }

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.sejiwaproject.R
-import com.dicoding.picodiploma.sejiwaproject.features.favorite.MatchActivity
+import com.dicoding.picodiploma.sejiwaproject.features.favorite.FavoriteActivity
 
 class LeagueListActivity : AppCompatActivity() {
     private lateinit var rvLeague: RecyclerView
@@ -60,7 +60,7 @@ class LeagueListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.favorite -> {
-                val moveIntent = Intent(this@LeagueListActivity, MatchActivity::class.java)
+                val moveIntent = Intent(this@LeagueListActivity, FavoriteActivity::class.java)
                 startActivity(moveIntent)
             }
         }

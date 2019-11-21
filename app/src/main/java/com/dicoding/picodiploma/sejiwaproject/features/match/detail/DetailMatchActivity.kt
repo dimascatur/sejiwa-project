@@ -12,8 +12,10 @@ import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
 import com.dicoding.picodiploma.sejiwaproject.db.database
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatch
+import com.dicoding.picodiploma.sejiwaproject.features.team.TeamActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_detail_match.*
+import org.jetbrains.anko.startActivity
 
 class DetailMatchActivity : AppCompatActivity(),
     DetailMatchView {
@@ -81,7 +83,8 @@ class DetailMatchActivity : AppCompatActivity(),
                 teamAway = detailMatch.teamAway,
                 dateMatch = detailMatch.dateMatch,
                 badgeHome = detailMatch.badgeHome,
-                badgeAway = detailMatch.badgeAway
+                badgeAway = detailMatch.badgeAway,
+                homeStadium = detailMatch.homeStadium
             )
 
             home_score.text = detailMatch.homeScore
@@ -99,12 +102,22 @@ class DetailMatchActivity : AppCompatActivity(),
         team_away.text = detailMatch.teamAway
 
         Glide.with(this)
+            .load(detailMatch.homeStadium)
+            .into(home_stadium)
+
+        Glide.with(this)
             .load(detailMatch.badgeHome)
             .into(home_logo)
+        home_logo.setOnClickListener {
+            this.startActivity<TeamActivity>(TeamActivity.EXTRA_TEAM to detailMatch.homeId)
+        }
 
         Glide.with(this)
             .load(detailMatch.badgeAway)
             .into(away_logo)
+        away_logo.setOnClickListener {
+            this.startActivity<TeamActivity>(TeamActivity.EXTRA_TEAM to detailMatch.awayId)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

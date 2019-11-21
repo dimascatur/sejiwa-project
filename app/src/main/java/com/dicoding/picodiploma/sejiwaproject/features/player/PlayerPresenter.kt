@@ -13,6 +13,7 @@ class PlayerPresenter(
     private var view: PlayerView?,
     private val apiRepository: ApiRepository,
     private val gson: Gson, private val context: CoroutineContextProvider = CoroutineContextProvider()) {
+
     fun getPlayerLogo(idTeam: String) {
         view?.showLoading()
 

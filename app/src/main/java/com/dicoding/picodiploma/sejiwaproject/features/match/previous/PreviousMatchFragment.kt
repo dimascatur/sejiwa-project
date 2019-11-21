@@ -74,20 +74,20 @@ class PreviousMatchFragment : Fragment(),
     }
 
     override fun showLoading() {
-        progress_bar.visible()
+        progress_previous.visible()
     }
 
     override fun hideLoading() {
-        progress_bar.invisible()
+        progress_previous.invisible()
     }
 
     override fun matchReady(previousMatch: PreviousMatch) {
-        progress_bar.invisible()
+        progress_previous.invisible()
         (rvMatch.adapter as PreviousMatchAdapter).addPreviousMatch(previousMatch)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDetach() {
+        super.onDetach()
         presenter.onDetach()
     }
 }

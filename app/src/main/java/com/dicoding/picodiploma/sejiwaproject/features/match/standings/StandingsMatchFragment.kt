@@ -1,57 +1,59 @@
-package com.dicoding.picodiploma.sejiwaproject.features.match.next
+package com.dicoding.picodiploma.sejiwaproject.features.match.standings
 
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
-import com.dicoding.picodiploma.sejiwaproject.features.match.next.model.NextMatch
+import com.dicoding.picodiploma.sejiwaproject.features.match.standings.model.StandingsMatch
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_next_match.*
+import kotlinx.android.synthetic.main.fragment_standings_match.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class NextMatchFragment : Fragment(),
-    NextMatchView {
+class StandingsMatchFragment : Fragment(), StandingsMatchView {
     private lateinit var rvMatch: RecyclerView
-    private lateinit var presenter: NextMatchPresenter
+    private lateinit var presenter: StandingsMatchPresenter
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_next_match, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_standings_match, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listNextAdapter = NextMatchAdapter(mutableListOf())
+        val listStandingMatchAdapter = StandingsMatchAdapter(mutableListOf())
 
-        rvMatch = view.findViewById(R.id.rv_next_match)
+        rvMatch = view.findViewById(R.id.rv_standings_match)
         rvMatch.setHasFixedSize(true)
         rvMatch.layoutManager = LinearLayoutManager(context)
-        rvMatch.adapter = listNextAdapter
+        rvMatch.adapter = listStandingMatchAdapter
 
         val id = arguments?.getString(ID_LEAGUE)
 
         val request = ApiRepository()
         val gson = Gson()
         presenter =
-            NextMatchPresenter(
+            StandingsMatchPresenter(
                 this,
                 request,
                 gson
             )
-        presenter.getNextMatch(id ?: "4328")
+        presenter.getStandingsLeague(id ?: "4328")
 
     }
 
@@ -59,28 +61,33 @@ class NextMatchFragment : Fragment(),
 
         private const val ID_LEAGUE = "id"
 
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
         @JvmStatic
-        fun newInstance( idLeague: String): NextMatchFragment {
-            return NextMatchFragment()
+        fun newInstance(idLeague: String): StandingsMatchFragment {
+            return StandingsMatchFragment()
                 .apply {
-                arguments = Bundle().apply {
-                    putString(ID_LEAGUE, idLeague)
+                    arguments = Bundle().apply {
+                        putString(ID_LEAGUE, idLeague)
+                    }
                 }
-            }
         }
     }
 
     override fun showLoading() {
-        progress_bar_next.visible()
+        progress_standings.visible()
     }
 
     override fun hideLoading() {
-        progress_bar_next.invisible()
+        progress_standings.invisible()
     }
 
-    override fun matchReady(nextMatch: NextMatch) {
-        progress_bar_next.invisible()
-        (rvMatch.adapter as NextMatchAdapter).addNextMatch(nextMatch)
+    override fun showStandingsList(data: StandingsMatch) {
+        progress_standings.invisible()
+        (rvMatch.adapter as StandingsMatchAdapter).addStandingsMatch(data)
+
     }
 
     override fun onDetach() {
@@ -88,5 +95,3 @@ class NextMatchFragment : Fragment(),
         presenter.onDetach()
     }
 }
-
-

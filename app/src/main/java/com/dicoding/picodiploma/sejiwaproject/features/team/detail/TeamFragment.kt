@@ -11,8 +11,6 @@ import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.visible
-import com.dicoding.picodiploma.sejiwaproject.features.team.TeamPresenter
-import com.dicoding.picodiploma.sejiwaproject.features.team.TeamView
 import com.dicoding.picodiploma.sejiwaproject.features.team.model.Team
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_team.*
@@ -86,5 +84,10 @@ class TeamFragment : Fragment(), TeamView {
 
         team_formed.text = data.teamFormed
         team_description.text = data.teamDescription
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        presenter.onDetach()
     }
 }

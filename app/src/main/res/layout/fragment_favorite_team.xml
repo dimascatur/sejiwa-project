@@ -11,24 +11,24 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/text_favorite"
+            android:id="@+id/txt_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="@string/no_favorite"
+            android:text="@string/no_favorite_team"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/rv_next_match" />
+            app:layout_constraintTop_toTopOf="@+id/rv_favorite_team" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_next_match"
+            android:id="@+id/rv_favorite_team"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            tools:listitem="@layout/item_favorite_match" />
+            tools:listitem="@layout/item_favorite_team" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
