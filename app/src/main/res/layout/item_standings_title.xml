@@ -1,6 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_marginTop="16dp">
 
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/team_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@android:color/black"
+        android:text="Team Name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/team_played"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:text="PL"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/team_name"
+        app:layout_constraintEnd_toStartOf="@+id/team_goals"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/team_name" />
+
+    <TextView
+        android:id="@+id/team_goals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:text="G"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/team_played"
+        app:layout_constraintEnd_toStartOf="@+id/team_win"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_played"
+        app:layout_constraintTop_toTopOf="@+id/team_played"/>
+
+    <TextView
+        android:id="@+id/team_win"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="W"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/team_goals"
+        app:layout_constraintEnd_toStartOf="@+id/team_draw"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_goals"
+        app:layout_constraintTop_toTopOf="@+id/team_goals"/>
+
+    <TextView
+        android:id="@+id/team_draw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="D"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/team_win"
+        app:layout_constraintEnd_toStartOf="@+id/team_loss"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_win"
+        app:layout_constraintTop_toTopOf="@+id/team_win"/>
+
+    <TextView
+        android:id="@+id/team_loss"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="L"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/team_draw"
+        app:layout_constraintEnd_toStartOf="@+id/team_point"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_draw"
+        app:layout_constraintTop_toTopOf="@+id/team_draw" />
+
+    <TextView
+        android:id="@+id/team_point"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:text="Pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/team_loss"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_loss"
+        app:layout_constraintTop_toTopOf="@+id/team_loss"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+</androidx.constraintlayout.widget.ConstraintLayout>
