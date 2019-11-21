@@ -85,4 +85,9 @@ class TeamFragment : Fragment(), TeamView {
         team_formed.text = data.teamFormed
         team_description.text = data.teamDescription
     }
+
+    override fun onDetach() {
+        super.onDetach()
+        presenter.onDetach()
+    }
 }
