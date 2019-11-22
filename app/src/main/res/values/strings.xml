@@ -79,5 +79,6 @@
     <string name="l">L</string>
     <string name="pt">Pt</string>
     <string name="w">W</string>
+    <string name="detail_match">Detail Match</string>
 
 </resources>
