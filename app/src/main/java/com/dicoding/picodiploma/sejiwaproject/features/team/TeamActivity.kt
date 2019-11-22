@@ -27,7 +27,6 @@ class TeamActivity : AppCompatActivity(), TeamView {
     private lateinit var teamId: String
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_detail)
@@ -60,6 +59,7 @@ class TeamActivity : AppCompatActivity(), TeamView {
             ), "Player"
         )
         view_pager_team.adapter = sectionsPagerAdapter
+        view_pager_team.offscreenPageLimit = 2
         tabs.setupWithViewPager(view_pager_team)
 
         detail_toolbar.title = "Detail Team"
@@ -122,7 +122,7 @@ class TeamActivity : AppCompatActivity(), TeamView {
                 true
             }
             R.id.add_to_favorite -> {
-                if (isFavorite){
+                if (isFavorite) {
                     presenter.removeFromFavorite(teamId)
                 } else {
                     presenter.addToFavorite(team)
