@@ -1,11 +1,13 @@
 package com.dicoding.picodiploma.sejiwaproject.features.match.detail
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.dicoding.picodiploma.sejiwaproject.R
 import com.dicoding.picodiploma.sejiwaproject.commons.api.ApiRepository
 import com.dicoding.picodiploma.sejiwaproject.commons.utils.invisible
@@ -14,6 +16,7 @@ import com.dicoding.picodiploma.sejiwaproject.db.database
 import com.dicoding.picodiploma.sejiwaproject.features.match.detail.model.DetailMatch
 import com.dicoding.picodiploma.sejiwaproject.features.team.TeamActivity
 import com.google.gson.Gson
+import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_detail_match.*
 import org.jetbrains.anko.startActivity
 
@@ -30,6 +33,9 @@ class DetailMatchActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_match)
 
+        setSupportActionBar(detail_match_toolbar)
+        supportActionBar?.title = "Detail Match"
+
         matchDetail = intent.getStringExtra(EXTRA_ID) as String
 
         val request = ApiRepository()
@@ -43,6 +49,9 @@ class DetailMatchActivity : AppCompatActivity(),
             )
         presenter.getDetailMatch(matchDetail)
         presenter.favoriteState(matchDetail)
+
+        collapsing.setExpandedTitleColor(Color.TRANSPARENT)
+        collapsing.setCollapsedTitleTextColor(Color.WHITE)
 
     }
 
@@ -103,6 +112,7 @@ class DetailMatchActivity : AppCompatActivity(),
 
         Glide.with(this)
             .load(detailMatch.homeStadium)
+            .apply(RequestOptions.bitmapTransform(BlurTransformation(20, 3)))
             .into(home_stadium)
 
         Glide.with(this)

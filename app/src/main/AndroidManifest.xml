@@ -18,8 +18,7 @@
             android:name=".features.match.search.SearchMatchActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
-            android:name=".features.match.detail.DetailMatchActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+            android:name=".features.match.detail.DetailMatchActivity" />
         <activity android:name=".features.league.detail.DetailLeagueActivity" />
         <activity
             android:name=".features.league.list.LeagueListActivity"
