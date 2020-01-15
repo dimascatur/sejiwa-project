@@ -11,23 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".features.player.PlayerDetailActivity"></activity>
-        <activity android:name=".features.favorite.FavoriteActivity" />
-        <activity android:name=".features.team.TeamActivity"/>
-        <activity
-            android:name=".features.match.search.SearchMatchActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
-        <activity
-            android:name=".features.match.detail.DetailMatchActivity" />
-        <activity android:name=".features.league.detail.DetailLeagueActivity" />
-        <activity
-            android:name=".features.league.list.LeagueListActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        <activity android:name=".features.league.list.SplashScreenActivity"
+            android:theme="@style/SplashScreenStyle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".features.player.PlayerDetailActivity" />
+        <activity android:name=".features.favorite.FavoriteActivity" />
+        <activity android:name=".features.team.TeamActivity" />
+        <activity
+            android:name=".features.match.search.SearchMatchActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name=".features.match.detail.DetailMatchActivity" />
+        <activity android:name=".features.league.detail.DetailLeagueActivity" />
+        <activity
+            android:name=".features.league.list.LeagueListActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         </activity>
     </application>
 

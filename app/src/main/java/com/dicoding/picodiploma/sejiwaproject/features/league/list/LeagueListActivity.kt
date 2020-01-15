@@ -66,5 +66,11 @@ class LeagueListActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+        finish()
+    }
 }
 
